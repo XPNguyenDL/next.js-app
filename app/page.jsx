@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-        <h1 className='font-semibold text-justify'>
+        <h1 className='mt-[var(--header-height)] font-semibold text-justify'>
         inventore quis eos consectetur distinctio nobis officiis necessitatibus, quisquam neque ea dicta porro
         labore provident consequatur ipsam ad reprehenderit. Neque asperiores minus aperiam sequi molestiae! Animi
         voluptate eius repellat harum aliquam at reprehenderit reiciendis laboriosam libero, quia vitae velit
