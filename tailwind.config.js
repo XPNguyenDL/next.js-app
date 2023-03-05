@@ -21,9 +21,10 @@ module.exports = {
       black: "#0a0a0a",
       purple: "#7a5fd5",
       "purple-light": "#8071b3",
-      "gray-dark": "#273444",
+      "gray-dark": "rgba(0,0,0,0.8)",
       gray: "#8492a6",
       "gray-light": "rgba(0,0,0,0.6)",
+      "white-opacity": "rgba(255,255,255,0.95)",
       primary: {
         100: "#ebf8ff",
         300: "#90cdf4",
@@ -39,12 +40,6 @@ module.exports = {
         900: "#744210"
       }
     },
-    animation: {
-      "slide-in": "slide-in 0.5s ease-in-out",
-      "slide-out": "slide-out 0.5s ease-in-out",
-      "fade-in": "fade-in 0.5s ease-in-out",
-      "fade-out": "fade-out 0.5s ease-in-out"
-    }
   },
   plugins: []
 };

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
 const pages = [
@@ -28,10 +28,14 @@ const pages = [
 ];
 
 export default function Sidebar() {
-  // UseState
+  /**
+   * UseState function
+   */
   const [isClosed, setIsCLosed] = useState(true);
 
-  // handle events
+  /**
+   * Handle function
+   */
   const handleCloseSidebar = () => {
     setIsCLosed(true);
     console.log(isClosed);
@@ -40,15 +44,19 @@ export default function Sidebar() {
     setIsCLosed(false);
     console.log(isClosed);
   };
+
+  useEffect(() => {
+    window.onresize = () => {
+      if (window.innerWidth >= 1280) handleCloseSidebar();
+    };
+  }, []);
   return (
     <>
       <button
         className="flex xl:hidden items-center justify-center "
         onClick={handleOpenSidebar}
       >
-        <AiOutlineMenu
-          className="py-4 w-[var(--header-height)] h-[var(--header-height)] hover:fill-purple"
-        />
+        <AiOutlineMenu className="py-4 w-[var(--header-height)] h-[var(--header-height)] hover:fill-purple" />
       </button>
       <div
         className={isClosed ? null : "bg-gray-light absolute w-screen h-screen"}
