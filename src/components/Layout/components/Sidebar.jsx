@@ -6,19 +6,27 @@ import { AiOutlineMenu } from "react-icons/ai";
 
 const pages = [
   {
-    name: "Home",
+    name: "Trang chủ",
     path: "/"
   },
   {
-    name: "SHOP",
+    name: "Tin tức",
     path: "/"
   },
   {
-    name: "ABOUT",
+    name: "Cửa hàng",
     path: "/"
   },
   {
-    name: "SIGN IN",
+    name: "Manga",
+    path: "/"
+  },
+  {
+    name: "Light novel",
+    path: "/"
+  },
+  {
+    name: "Đăng nhập",
     path: "/"
   },
   {
@@ -41,8 +49,7 @@ export default function Sidebar() {
     console.log(isClosed);
   };
   const handleOpenSidebar = () => {
-    setIsCLosed(false);
-    console.log(isClosed);
+    setTimeout(() => setIsCLosed(false), 700);
   };
 
   useEffect(() => {
@@ -66,8 +73,8 @@ export default function Sidebar() {
       ></div>
       <div
         id="cta-button-sidebar"
-        className={`fixed top-0 left-0 w-48 sm:w-60 h-screen transition-all transform duration-500 animation-slide-in ${
-          isClosed ? "-translate-x-full" : "translate-x-0"
+        className={`fixed top-0 left-0 w-48 sm:w-60 h-screen transition-all transform duration-500 animation-slide-in opacity-0 ${
+          isClosed ? "-translate-x-full" : "translate-x-0 opacity-100"
         }`}
         aria-label="Sidebar"
       >

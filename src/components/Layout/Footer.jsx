@@ -2,10 +2,10 @@ import FooterAside from "./components/FooterAside";
 
 export default function Footer() {
   return (
-    <footer class="bg-gray text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+    <footer class="bg-gray text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left ">
       <div class="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500">
         
-        <div class="flex justify-center">
+        <div class="flex justify-center container ">
           <a href="#!" class="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -76,8 +76,8 @@ export default function Footer() {
       <div class="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
         <span>© 2023 Copyright: </span>
         <a
-          class="font-semibold text-neutral-600 dark:text-neutral-400"
-          href="https://tailwind-elements.com/"
+          class="font-semibold text-neutral-600 dark:text-neutral-400 hover:text-purple"
+          href="/#"
         >
         Manga Store
         </a>
