@@ -21,6 +21,7 @@ module.exports = {
       gray: "rgb(227,225,219)",
       "gray-light": "rgba(0,0,0,0.6)",
       "white-opacity": "rgba(255,255,255,0.95)",
+      white: "rgba(255,255,255)",
       primary: {
         100: "#ebf8ff",
         300: "#90cdf4",
