@@ -11,18 +11,14 @@ module.exports = {
   theme: {
     extend: {},
     dropShadow: {
-      '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
-      '4xl': [
-          '0 35px 35px rgba(0, 0, 0, 0.25)',
-          '0 45px 65px rgba(0, 0, 0, 0.15)'
-      ]
+      'top': '0 35px 35px rgba(0, 0, 0, 0.25)',
     },
     colors: {
       black: "#0a0a0a",
       purple: "#7a5fd5",
       "purple-light": "#8071b3",
       "gray-dark": "rgba(0,0,0,0.8)",
-      gray: "#8492a6",
+      gray: "rgb(227,225,219)",
       "gray-light": "rgba(0,0,0,0.6)",
       "white-opacity": "rgba(255,255,255,0.95)",
       primary: {
