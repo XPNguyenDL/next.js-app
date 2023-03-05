@@ -1,9 +1,5 @@
-"use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { AiOutlineMenu } from "react-icons/ai";
-import { useEffect, useLayoutEffect, useState } from "react";
 
 const pages = [
   {
@@ -29,8 +25,30 @@ const pages = [
 ];
 
 export default function Navbar() {
+  /**
+   * Amination
+   */
   const NAVIGATION_ANIMATION =
-    "transition transform duration-500 slide-in hover:-translate-y-1 ";
+    "after:transition-all after:transform after:duration-700 before:transition-all before:transform before:duration-700";
+
+  const NAVIGATION_BEFORE =
+    "before:absolute before:h-[2px] before:w-[35%] before:bg-purple before:top-0 before:left-0 before:opacity-0 hover:before:opacity-100 hover:before:left-[65%]";
+  const NAVIGATION_AFTER =
+    "after:absolute after:h-[2px] after:w-[35%] after:bg-purple after:right-0 after:bottom-0 after:opacity-0 hover:after:opacity-100 hover:after:right-[65%]";
+
+  /**
+   * UseState function
+   */
+
+
+  /**
+   * Handle function
+   */
+
+  /**
+   * UseEffect function
+   */
+
 
   return (
     <>
@@ -39,12 +57,12 @@ export default function Navbar() {
           <div className="lg:flex items-center" id="example-navbar-danger">
             <ul className="hidden xl:flex lg:flex-row list-none lg:ml-auto">
               {pages.map((page, index) => (
-                <li className="nav-item" key={index}>
+                <li
+                  className={`nav-item mx-2 inline-block relative ${NAVIGATION_BEFORE} ${NAVIGATION_AFTER} ${NAVIGATION_ANIMATION}`}
+                  key={index}
+                >
                   <Link
-                    className={
-                      "p-3 flex items-center text-xs text-black uppercase font-semibold border-opacity-0 border-b border-gray hover:border-opacity-100 opacity-75 hover:opacity-100 hover:text-purple " +
-                      NAVIGATION_ANIMATION
-                    }
+                    className="p-2 flex items-center text-xs text-black uppercase font-semibold hover:opacity-100 hover:text-purple transform"
                     href="/"
                   >
                     <span className="font text-lg">{page.name}</span>
@@ -53,7 +71,7 @@ export default function Navbar() {
               ))}
             </ul>
           </div>
-          </div>
+        </div>
       </nav>
     </>
   );
