@@ -1,27 +1,28 @@
 
 import Link from "next/link";
+import { CgProfile } from "react-icons/cg";
 
 const pages = [
   {
-    name: "Home",
+    name: "Trang chủ",
     path: "/"
   },
   {
-    name: "SHOP",
+    name: "Tin tức",
     path: "/"
   },
   {
-    name: "ABOUT",
+    name: "Cửa hàng",
     path: "/"
   },
   {
-    name: "SIGN IN",
+    name: "Manga",
     path: "/"
   },
   {
-    name: "SIGN UP",
+    name: "Light novel",
     path: "/"
-  }
+  },
 ];
 
 export default function Navbar() {
@@ -69,6 +70,18 @@ export default function Navbar() {
                   </Link>
                 </li>
               ))}
+              <li
+                  className={`nav-item mx-2 flex relative items-center ${NAVIGATION_ANIMATION}`}
+                  
+                >
+                  <Link
+                    className="flex hover:opacity-100 hover:text-purple transform"
+                    href="/"
+                  >
+                    <CgProfile size={24}/>
+                  </Link>
+                </li>
+              
             </ul>
           </div>
         </div>
