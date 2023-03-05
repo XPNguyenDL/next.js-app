@@ -58,7 +58,7 @@ export default function Sidebar() {
     };
   }, []);
   return (
-    <>
+    <div className="mr-auto lg:hidden z-50">
       <button
         className="flex xl:hidden items-center justify-center "
         onClick={handleOpenSidebar}
@@ -66,7 +66,7 @@ export default function Sidebar() {
         <AiOutlineMenu className="py-4 w-[var(--header-height)] h-[var(--header-height)] hover:fill-purple" />
       </button>
       <div
-        className={isClosed ? null : "bg-gray-light absolute w-screen h-screen"}
+        className={isClosed ? null : "bg-gray-light absolute w-screen h-screen top-0"}
         onClick={(events) => {
           handleCloseSidebar(events);
         }}
@@ -95,6 +95,6 @@ export default function Sidebar() {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
