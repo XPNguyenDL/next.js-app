@@ -1,10 +1,7 @@
-
-
+import Slider from "@/src/components/Slider/Slider";
 
 export default function Home() {
   return (
-        <h1 className='mt-[var(--header-height)] font-semibold text-justify'>
-          asd
-    </h1>
+    <Slider/>
   );
 }
