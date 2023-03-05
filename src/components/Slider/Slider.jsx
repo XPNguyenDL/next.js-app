@@ -46,9 +46,9 @@ export default function Slider() {
    * UseEffect function
    */
   return (
-    <div className="relative max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 group">
+    <div className="relative max-w-[100%] xl:max-w-[80%] h-[280px] lg:h-[640px] xl:h-[780px] w-full m-auto py-16 px-4 group">
       <div
-        style={{ backgroundImage: `url(${sliders[currentIndex].url})` }}
+        style={{ backgroundImage: `url(${sliders[currentIndex].url})` , backgroundRepeat: 'no-repeat'}}
         className="w-full h-full rounded-2xl bg-center bg-cover duration-700"
       ></div>
       <div
