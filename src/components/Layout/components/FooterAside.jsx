@@ -5,7 +5,7 @@ export default function FooterAside() {
     <div class="mx-6 py-10 text-center md:text-left  ">
       <div class="container mx-auto grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div class="">
-          <h6 class="mb-4 flex font-semibold uppercase justify-start">
+          <h6 class="mb-4 flex font-semibold uppercase justify-center md:justify-start ">
             DỊCH VỤ
           </h6>
           <p class="mb-4">
@@ -35,7 +35,7 @@ export default function FooterAside() {
           </p>
         </div>
         <div class="">
-          <h6 class="mb-4 flex font-semibold uppercase justify-start">
+          <h6 class="mb-4 flex font-semibold uppercase justify-center md:justify-start">
             HỖ TRỢ
           </h6>
           <p class="mb-4">
@@ -65,7 +65,7 @@ export default function FooterAside() {
           </p>
         </div>
         <div class="">
-          <h6 class="mb-4 flex font-semibold uppercase justify-start">
+          <h6 class="mb-4 flex font-semibold uppercase justify-center md:justify-start">
           KẾT NỐI MẠNG XÃ HỘI
           </h6>
           <p class="mb-4">
