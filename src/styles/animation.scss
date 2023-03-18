@@ -1,0 +1,71 @@
+figure.snip0011 {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    max-height: 220px;
+    width: 100%;
+    background: #000000;
+    text-align: center;
+    cursor: pointer;
+  }
+  figure.snip0011 img {
+    max-width: 100%;
+    opacity: 1;
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+  }
+  figure.snip0011 > div a i::before {
+    font-size: 50px;
+    opacity: 0;
+    top: 55%;
+    position: relative;
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0);
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    display: inline-block;
+  }
+  figure.snip0011 > div::before {
+    position: absolute;
+    top: 50%;
+    right: 40%;
+    bottom: 50%;
+    left: 40%;
+    border-top: 1px solid rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    content: '';
+    opacity: 0;
+    background-color: #ffffff;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  figure.snip0011:hover img {
+    opacity: 0.35;
+  }
+  figure.snip0011:hover > div i::before {
+    opacity: 0.8;
+    top: 50%;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+  figure.snip0011:hover > div::before {
+    background: rgba(255, 255, 255, 0);
+    top: 30px;
+    bottom: 30px;
+    left: 30px;
+    right: 30px;
+    opacity: 1;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  

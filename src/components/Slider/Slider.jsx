@@ -46,11 +46,17 @@ export default function Slider() {
    * UseEffect function
    */
   return (
-    <div className="relative max-w-[100%] xl:max-w-[80%] h-[280px] lg:h-[640px] xl:h-[780px] w-full m-auto py-16 px-4 group">
-      <div
-        style={{ backgroundImage: `url(${sliders[currentIndex].url})` , backgroundRepeat: 'no-repeat'}}
-        className="w-full h-full rounded-2xl bg-center bg-cover duration-700"
-      ></div>
+    <div className="relative max-w-[100%] h-[280px] lg:h-[640px] xl:h-[780px] w-full m-auto py-16 group">
+      
+        <div
+          className="w-full h-full bg-center overflow-hidden"
+        >
+           <div
+          style={{ backgroundImage: `url(${sliders[currentIndex].url})` , backgroundRepeat: 'no-repeat'}}
+          className="w-full h-full bg-center bg-cover duration-700 group-hover:scale-105"
+        ></div>
+        </div>
+       
       <div
         className="hidden group-hover:block absolute top-[50%] hover:text-white -translate-x-0 -translate-y-[50%] left-6 text-2xl rounded-full p-2 hover:bg-black/20 cursor-pointer"
         onClick={prevSlide}
