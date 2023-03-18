@@ -14,6 +14,7 @@ export default function Head() {
             <Image src={Logo} className="max-w-[90px] max-h-[60px] object-cover" alt="brand-logo" />
           </Link>
         </div>
+        
         <Navbar />
       </div>
     </div>

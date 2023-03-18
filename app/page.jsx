@@ -1,9 +1,11 @@
+import CategorySection from "@/src/components/Home/CategorySection";
 import Slider from "@/src/components/Slider/Slider";
 
 export default function Home() {
   return (
-    <div className="container flex mx-auto">
-    <Slider/>
+    <div>
+      <Slider/>
+      <CategorySection />
     </div>
   );
 }

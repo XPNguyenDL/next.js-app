@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Head/>
-        <main className="mt-[var(--header-height)] px-6 md:px-10">{children}</main>
+        <main>{children}</main>
         <Footer/>
       </body>
     </html>
