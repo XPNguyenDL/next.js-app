@@ -5,16 +5,12 @@ import "@/src/styles/animation.scss";
 
 export default function CategoryItem({ path, image, title }) {
   return (
-    <figure class="snip0011 group">
-      <Image src={image} alt="sample1" />
-      <div>
-        <a href="#"
-        className="h-full left-0 absolute top-0 w-full text-white">
-            <div className="opacity-0 relative left-[45%] top-[65%] group-hover:top-[45%] group-hover:opacity-80 duration-500">
-                <BsSearch size={30} />
-            </div>
-        </a>
-      </div>
+    <figure class="snip1212 group">
+      <Image src={image} alt="sample1" className="w-full hover:opacity-40" />
+      <figcaption>
+        <h2 className="group-hover:text-white">{title}</h2>
+        <p>Xem thêm</p>
+      </figcaption>
     </figure>
   );
 }
