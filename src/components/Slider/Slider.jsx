@@ -4,12 +4,15 @@ import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { RxDotFilled, RxDot } from "react-icons/rx";
 
+import everyday from '@/public/assets/images/home/everyday.webp';
+import sliderManga from '@/public/assets/images/home/sliderManga.webp';
+
 const sliders = [
   {
-    url: "https://akko.com.vn/wp-content/uploads/2023/03/5075B-Plus-goku-naruto.jpg"
+    url: "https://file.hstatic.net/200000294254/file/panda_991c0f531ab741b6b66dca2614d6db0a.jpg"
   },
   {
-    url: "https://akko.com.vn/wp-content/uploads/2023/03/AKKO-3068B-banner-01.jpg"
+    url: "https://file.hstatic.net/200000294254/file/everyday_7592b4724863409f865a5ee3db54b14b.jpg"
   },
   {
     url: "https://akko.com.vn/wp-content/uploads/2023/03/akko-3098B-banner-ngang-01.jpg"
