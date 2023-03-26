@@ -105,7 +105,7 @@ figure.snip0011 {
   }
   
   figure.snip1212 h2,
-  figure.snip1212 p {
+  figure.snip1212 div {
     margin: 0;
     width: 100%;
     padding: 10px 20px;
@@ -120,23 +120,23 @@ figure.snip0011 {
     text-transform: uppercase;
   }
   
-  figure.snip1212 p {
-    background: rgba(255, 255, 255, 0.9);
-    text-align: right;
-    bottom: 0;
-    font-size: 0.8em;
-    font-weight: 500;
-  }
+  // figure.snip1212 div {
+  //   background: rgba(255, 255, 255, 0.9);
+  //   text-align: right;
+  //   bottom: 0;
+  //   font-size: 0.8em;
+  //   font-weight: 500;
+  // }
   
-  figure.snip1212 a {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    position: absolute;
-    z-index: 1;
-  }
-  
+    // figure.snip1212 a {
+    //   left: 0;
+    //   right: 0;
+    //   top: 0;
+    //   bottom: 0;
+    //   position: absolute;
+    //   z-index: 1;
+    // }
+    
   figure.snip1212:hover img,
   figure.snip1212.hover img {
     opacity: 0.4;

@@ -5,12 +5,15 @@ import "@/src/styles/animation.scss";
 
 export default function CategoryItem({ path, image, title }) {
   return (
-    <figure class="snip1212 group">
-      <Image src={image} alt="sample1" className="w-full hover:opacity-40" />
-      <figcaption>
-        <h2 className="group-hover:text-white">{title}</h2>
-        <p>Xem thêm</p>
-      </figcaption>
-    </figure>
+    <div class="group m-2 ">
+      <div className="overflow-hidden relative">
+      <Link href={""} className="w-full h-full bg-center"
+        title={`${title}`}
+        >
+          <Image src={image} alt='category-image' className='invisible'/>
+          <Image src={image} alt="sample1" className="absolute top-0 w-full group-hover:scale-105 duration-500 w-full h-full" />
+        </Link>
+      </div>
+    </div>
   );
 }
