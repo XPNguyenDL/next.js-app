@@ -4,12 +4,15 @@ import { useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import { RxDotFilled, RxDot } from "react-icons/rx";
 
+import everyday from "@/public/assets/images/home/everyday.webp";
+import sliderManga from "@/public/assets/images/home/sliderManga.webp";
+
 const sliders = [
   {
-    url: "https://akko.com.vn/wp-content/uploads/2023/03/5075B-Plus-goku-naruto.jpg"
+    url: "https://file.hstatic.net/200000294254/file/panda_991c0f531ab741b6b66dca2614d6db0a.jpg"
   },
   {
-    url: "https://akko.com.vn/wp-content/uploads/2023/03/AKKO-3068B-banner-01.jpg"
+    url: "https://file.hstatic.net/200000294254/file/everyday_7592b4724863409f865a5ee3db54b14b.jpg"
   },
   {
     url: "https://akko.com.vn/wp-content/uploads/2023/03/akko-3098B-banner-ngang-01.jpg"
@@ -46,32 +49,31 @@ export default function Slider() {
    * UseEffect function
    */
   return (
-    <div className="relative max-w-[100%] h-[280px] lg:h-[640px] xl:h-[780px] w-full m-auto py-16 group">
-      
+    <div className="group relative m-auto h-[280px] w-full max-w-[100%] py-16 lg:h-[640px] xl:h-[780px]">
+      <div className="h-full w-full overflow-hidden bg-center">
         <div
-          className="w-full h-full bg-center overflow-hidden"
-        >
-           <div
-          style={{ backgroundImage: `url(${sliders[currentIndex].url})` , backgroundRepeat: 'no-repeat'}}
-          className="w-full h-full bg-center bg-cover duration-700 group-hover:scale-105"
-        ></div>
-        </div>
-       
+          style={{
+            backgroundImage: `url(${sliders[currentIndex].url})`,
+            backgroundRepeat: "no-repeat"
+          }}
+          className="h-full w-full bg-cover bg-center duration-700 group-hover:scale-105"></div>
+      </div>
       <div
-        className="hidden group-hover:block absolute top-[50%] hover:text-white -translate-x-0 -translate-y-[50%] left-6 text-2xl rounded-full p-2 hover:bg-black/20 cursor-pointer"
-        onClick={prevSlide}
-      >
+        className="absolute top-[50%] left-6 hidden -translate-x-0 -translate-y-[50%] cursor-pointer rounded-full p-2 text-2xl hover:bg-black/20 hover:text-white group-hover:block"
+        onClick={prevSlide}>
         <BsChevronLeft size={30} />
       </div>
       <div
-        className="hidden group-hover:block absolute top-[50%] hover:text-white -translate-x-0 -translate-y-[50%] right-6 text-2xl rounded-full p-2 hover:bg-black/20 cursor-pointer"
-        onClick={nextSlide}
-      >
+        className="absolute top-[50%] right-6 hidden -translate-x-0 -translate-y-[50%] cursor-pointer rounded-full p-2 text-2xl hover:bg-black/20 hover:text-white group-hover:block"
+        onClick={nextSlide}>
         <BsChevronRight size={30} />
       </div>
-      <div className="flex top-4 justify-center py-2">
+      <div className="top-4 flex justify-center py-2">
         {sliders.map((slider, sliderIndex) => (
-          <div key={sliderIndex} className="text-2xl cursor-pointer" onClick={() => goToSlide(sliderIndex)}>
+          <div
+            key={sliderIndex}
+            className="cursor-pointer text-2xl"
+            onClick={() => goToSlide(sliderIndex)}>
             {sliderIndex === currentIndex ? <RxDotFilled /> : <RxDot />}
           </div>
         ))}

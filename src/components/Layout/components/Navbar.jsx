@@ -1,6 +1,6 @@
-
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
+import { RiShoppingCart2Line } from "react-icons/ri";
 
 const pages = [
   {
@@ -22,7 +22,7 @@ const pages = [
   {
     name: "Light novel",
     path: "/"
-  },
+  }
 ];
 
 export default function Navbar() {
@@ -41,7 +41,6 @@ export default function Navbar() {
    * UseState function
    */
 
-
   /**
    * Handle function
    */
@@ -49,7 +48,6 @@ export default function Navbar() {
   /**
    * UseEffect function
    */
-
 
   return (
     <>
@@ -71,17 +69,26 @@ export default function Navbar() {
                 </li>
               ))}
               <li
+                className={`nav-item mx-2 flex relative items-center ${NAVIGATION_ANIMATION}`}
+              >
+                <Link
+                  className="flex hover:opacity-100 hover:text-purple transform"
+                  href="/"
+                >
+                  <CgProfile size={24} />
+                </Link>
+              </li>
+              <li
                   className={`nav-item mx-2 flex relative items-center ${NAVIGATION_ANIMATION}`}
                   
                 >
                   <Link
                     className="flex hover:opacity-100 hover:text-purple transform"
-                    href="/"
+                    href="/cart"
                   >
-                    <CgProfile size={24}/>
+                    <RiShoppingCart2Line size={24}/>
                   </Link>
                 </li>
-              
             </ul>
           </div>
         </div>

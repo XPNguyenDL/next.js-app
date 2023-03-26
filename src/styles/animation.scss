@@ -69,3 +69,81 @@ figure.snip0011 {
     transform: rotate(0deg);
   }
   
+  figure.snip1212 {
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    min-width: 220px;
+    max-width: 310px;
+    max-height: 220px;
+    width: 100%;
+    color: #000000;
+    background-image: -webkit-linear-gradient(top, #ffffff 0%, #000000 70%);
+    background-image: linear-gradient(to bottom, #ffffff 0%, #000000 70%);
+  }
+  
+  figure.snip1212 * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  
+  figure.snip1212 img {
+    max-width: 100%;
+  }
+  
+  figure.snip1212 figcaption {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  
+  figure.snip1212 h2,
+  figure.snip1212 div {
+    margin: 0;
+    width: 100%;
+    padding: 10px 20px;
+  }
+  
+  figure.snip1212 h2 {
+    color: #333;
+    position: absolute;
+    bottom: 100%;
+    display: inline-block;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  // figure.snip1212 div {
+  //   background: rgba(255, 255, 255, 0.9);
+  //   text-align: right;
+  //   bottom: 0;
+  //   font-size: 0.8em;
+  //   font-weight: 500;
+  // }
+  
+    // figure.snip1212 a {
+    //   left: 0;
+    //   right: 0;
+    //   top: 0;
+    //   bottom: 0;
+    //   position: absolute;
+    //   z-index: 1;
+    // }
+    
+  figure.snip1212:hover img,
+  figure.snip1212.hover img {
+    opacity: 0.4;
+  }
+  
+  figure.snip1212:hover figcaption,
+  figure.snip1212.hover figcaption {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }

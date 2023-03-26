@@ -31,9 +31,9 @@ const categories = [
 export default function CategorySection() {
   return (
     <div className="mx-auto px-6 md:px-10 max-w-screen-2xl">
-      <SectionHeader subtitle="Tham khảo" title="Danh mục" />
+      <SectionHeader title="Danh mục" />
       <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex justify-center gap-2 md:gap-6 w-[160vw] md:w-[110vw] lg:w-full xl:w-10/12 mx-auto">
+        <div className="flex justify-center">
           {categories.map((category, index) => (
             <CategoryItem
               key={index}

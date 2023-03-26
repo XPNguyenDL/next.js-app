@@ -5,16 +5,15 @@ import "@/src/styles/animation.scss";
 
 export default function CategoryItem({ path, image, title }) {
   return (
-    <figure class="snip0011 group">
-      <Image src={image} alt="sample1" />
-      <div>
-        <a href="#"
-        className="h-full left-0 absolute top-0 w-full text-white">
-            <div className="opacity-0 relative left-[45%] top-[65%] group-hover:top-[45%] group-hover:opacity-80 duration-500">
-                <BsSearch size={30} />
-            </div>
-        </a>
+    <div class="group m-2 ">
+      <div className="overflow-hidden relative">
+      <Link href={""} className="w-full h-full bg-center"
+        title={`${title}`}
+        >
+          <Image src={image} alt='category-image' className='invisible'/>
+          <Image src={image} alt="sample1" className="absolute top-0 w-full group-hover:scale-105 duration-500 w-full h-full" />
+        </Link>
       </div>
-    </figure>
+    </div>
   );
 }
