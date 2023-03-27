@@ -14,12 +14,14 @@ module.exports = {
       'top': '0 35px 35px rgba(0, 0, 0, 0.25)',
     },
     colors: {
+      transparent: "rgba(0,0,0,0)",
       black: "#0a0a0a",
       purple: "#7a5fd5",
       "purple-light": "#8071b3",
       "gray-dark": "rgba(0,0,0,0.8)",
       gray: "rgb(227,225,219)",
       "gray-light": "rgba(0,0,0,0.6)",
+      "brown-light": "rgb(227,225,219)",
       "white-opacity": "rgba(255,255,255,0.95)",
       white: "rgba(255,255,255)",
       primary: {
