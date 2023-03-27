@@ -8,7 +8,7 @@ export default function ProductItem() {
     <div className="relative mb-2.5 overflow-hidden bg-white group">
       <div className="px-5">
         <div className="relative overflow-hidden">
-          <Link href={`products/123`} title={"Mừng cậu trở về"}>
+          <Link href={`product/123`} title={"Mừng cậu trở về"}>
             <Image src={journey} alt='category-image' className='invisible'/>
             <Image
               src={journey}
