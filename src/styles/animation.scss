@@ -1,149 +1,200 @@
 figure.snip0011 {
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-    min-width: 220px;
-    max-width: 310px;
-    max-height: 220px;
-    width: 100%;
-    background: #000000;
-    text-align: center;
-    cursor: pointer;
-  }
-  figure.snip0011 img {
-    max-width: 100%;
-    opacity: 1;
-    -webkit-transition: opacity 0.35s;
-    transition: opacity 0.35s;
-  }
-  figure.snip0011 > div a i::before {
-    font-size: 50px;
-    opacity: 0;
-    top: 55%;
-    position: relative;
-    -webkit-transform: translate3d(0, -50%, 0);
-    transform: translate3d(0, -50%, 0);
-    -webkit-transition: 0.3s ease-in-out;
-    transition: 0.3s ease-in-out;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-    display: inline-block;
-  }
-  figure.snip0011 > div::before {
-    position: absolute;
-    top: 50%;
-    right: 40%;
-    bottom: 50%;
-    left: 40%;
-    border-top: 1px solid rgba(255, 255, 255, 0.8);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  background: #000000;
+  text-align: center;
+  cursor: pointer;
+}
+
+figure.snip0011 img {
+  max-width: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+figure.snip0011>div a i::before {
+  font-size: 50px;
+  opacity: 0;
+  top: 55%;
+  position: relative;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  display: inline-block;
+}
+
+figure.snip0011>div::before {
+  position: absolute;
+  top: 50%;
+  right: 40%;
+  bottom: 50%;
+  left: 40%;
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  content: '';
+  opacity: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+figure.snip0011:hover img {
+  opacity: 0.35;
+}
+
+figure.snip0011:hover>div i::before {
+  opacity: 0.8;
+  top: 50%;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+figure.snip0011:hover>div::before {
+  background: rgba(255, 255, 255, 0);
+  top: 30px;
+  bottom: 30px;
+  left: 30px;
+  right: 30px;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+figure.snip1212 {
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  min-width: 220px;
+  max-width: 310px;
+  max-height: 220px;
+  width: 100%;
+  color: #000000;
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #000000 70%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #000000 70%);
+}
+
+figure.snip1212 * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+figure.snip1212 img {
+  max-width: 100%;
+}
+
+figure.snip1212 figcaption {
+  position: absolute;
+  bottom: 0%;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+}
+
+figure.snip1212 h2,
+figure.snip1212 div {
+  margin: 0;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+figure.snip1212 h2 {
+  color: #333;
+  position: absolute;
+  bottom: 100%;
+  display: inline-block;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+// figure.snip1212 div {
+//   background: rgba(255, 255, 255, 0.9);
+//   text-align: right;
+//   bottom: 0;
+//   font-size: 0.8em;
+//   font-weight: 500;
+// }
+
+// figure.snip1212 a {
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   position: absolute;
+//   z-index: 1;
+// }
+
+figure.snip1212:hover img,
+figure.snip1212.hover img {
+  opacity: 0.4;
+}
+
+figure.snip1212:hover figcaption,
+figure.snip1212.hover figcaption {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+
+$color: #fff;
+
+.btn-slide {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
     content: '';
-    opacity: 0;
-    background-color: #ffffff;
-    -webkit-transition: all 0.4s;
-    transition: all 0.4s;
-    -webkit-transition-delay: 0.3s;
-    transition-delay: 0.3s;
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg);
-  }
-  figure.snip0011:hover img {
-    opacity: 0.35;
-  }
-  figure.snip0011:hover > div i::before {
-    opacity: 0.8;
-    top: 50%;
-    -webkit-transition-delay: 0.3s;
-    transition-delay: 0.3s;
-  }
-  figure.snip0011:hover > div::before {
-    background: rgba(255, 255, 255, 0);
-    top: 30px;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    opacity: 1;
-    -webkit-transition-delay: 0s;
-    transition-delay: 0s;
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  
-  figure.snip1212 {
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    margin: 10px;
-    min-width: 220px;
-    max-width: 310px;
-    max-height: 220px;
-    width: 100%;
-    color: #000000;
-    background-image: -webkit-linear-gradient(top, #ffffff 0%, #000000 70%);
-    background-image: linear-gradient(to bottom, #ffffff 0%, #000000 70%);
-  }
-  
-  figure.snip1212 * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-  }
-  
-  figure.snip1212 img {
-    max-width: 100%;
-  }
-  
-  figure.snip1212 figcaption {
     position: absolute;
-    bottom: 0%;
+    bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%);
+    height: 100%;
+    background-color: $color;
+    border-radius: 10rem;
+    z-index: -2;
   }
-  
-  figure.snip1212 h2,
-  figure.snip1212 div {
-    margin: 0;
-    width: 100%;
-    padding: 10px 20px;
-  }
-  
-  figure.snip1212 h2 {
-    color: #333;
+  &:before {
+    content: '';
     position: absolute;
-    bottom: 100%;
-    display: inline-block;
-    font-weight: 700;
-    text-transform: uppercase;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
   }
-  
-  // figure.snip1212 div {
-  //   background: rgba(255, 255, 255, 0.9);
-  //   text-align: right;
-  //   bottom: 0;
-  //   font-size: 0.8em;
-  //   font-weight: 500;
-  // }
-  
-    // figure.snip1212 a {
-    //   left: 0;
-    //   right: 0;
-    //   top: 0;
-    //   bottom: 0;
-    //   position: absolute;
-    //   z-index: 1;
-    // }
-    
-  figure.snip1212:hover img,
-  figure.snip1212.hover img {
-    opacity: 0.4;
+  &:hover {
+    color: #333;
+    &:before {
+      width: 100%;
+    }
   }
-  
-  figure.snip1212:hover figcaption,
-  figure.snip1212.hover figcaption {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
+}
