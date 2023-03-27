@@ -4,7 +4,7 @@ import NewProduct from "@/src/components/Home/NewProduct";
 import Slider from "@/src/components/Slider/Slider";
 
 export const metadata = {
-  title: "Trang chủ",
+  title: "NEKO BOOKS | Sách là bạn – NEKO Store",
 };
 
 export default function Home() {
