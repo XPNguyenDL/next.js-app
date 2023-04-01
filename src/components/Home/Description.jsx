@@ -6,7 +6,7 @@ import "@/src/styles/animation.scss";
 
 export default function Description() {
   return (
-    <div className="flex lg:grid w-full xl:grid-cols-2 items-center bg-brown-light">
+    <div className="lg:flex lg:grid w-full xl:grid-cols-2 items-center bg-brown-light">
       <div className="top-0 lg:sticky h-[260px] xl:h-screen overflow-hidden ">
         <div className="mx-auto w-[80%] z-[4] relative top-[20%] xl:top-1/2 text-center xl:text-left xl:left-[20%]">
             <h2 className="text-5xl font-bold text-white">Về chúng tôi</h2>

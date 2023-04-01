@@ -4,38 +4,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 
-const pages = [
-  {
-    name: "Trang chủ",
-    path: "/"
-  },
-  {
-    name: "Tin tức",
-    path: "/"
-  },
-  {
-    name: "Cửa hàng",
-    path: "/"
-  },
-  {
-    name: "Manga",
-    path: "/"
-  },
-  {
-    name: "Light novel",
-    path: "/"
-  },
-  {
-    name: "Đăng nhập",
-    path: "/"
-  },
-  {
-    name: "SIGN UP",
-    path: "/"
-  }
-];
 
-export default function Sidebar() {
+export default function Sidebar({ pages }) {
   /**
    * UseState function
    */
