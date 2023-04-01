@@ -1,5 +1,9 @@
+"use client"
+
 import React from "react";
 import CartSection from "@/src/components/Cart/CartSection.jsx";
+import { Provider } from "react-redux";
+import { store } from "@/src/store";
 
 export const metadata = {
   title: "Giỏ hàng",
@@ -8,8 +12,8 @@ export const metadata = {
 
 export default function Cart() {
   return (
-    <div>
+    <Provider store={store}>
       <CartSection />
-    </div>
+    </Provider>
   );
 }

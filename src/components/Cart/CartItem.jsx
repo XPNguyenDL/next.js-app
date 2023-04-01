@@ -1,10 +1,15 @@
 "use client"
+
+import { updateItemQuantity } from "@/src/reducers/CartStore";
+import { useDispatch } from "react-redux";
+
 export default function CartItem({ item }) {
+  const dispatch = useDispatch();
   const removeFromCart = () => {
-    removeItem(item);
+    dispatch(removeItem(item));
   };
   const updateQuantity = (quantity) => {
-    updateItemQuantity(item, quantity);
+    dispatch(updateItemQuantity(item, quantity));
   };
   return (
     <div className="flex items-center justify-between border-b border-gray-300 pb-2">
@@ -35,8 +40,8 @@ export default function CartItem({ item }) {
             <input
               type="number"
               min="1"
-              value={item.quantity}
-              onChange={(e) => updateQuantity(parseInt(e.target.value))}
+              value={isNaN(item.quantity) ? "" : item.quantity}
+              onChange={e => updateQuantity(parseInt(e.target.value))}
               className="border border-gray-300 w-16 h-8 text-center"
             />
           </div>
