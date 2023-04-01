@@ -5,7 +5,7 @@ import "@/src/styles/animation.scss";
 
 export default function CategoryItem({ path, image, title }) {
   return (
-    <div class="group m-2 ">
+    <div className="group m-2 ">
       <div className="overflow-hidden relative">
       <Link href={""} className="w-full h-full bg-center"
         title={`${title}`}

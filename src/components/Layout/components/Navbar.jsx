@@ -2,30 +2,8 @@ import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
 import { RiShoppingCart2Line } from "react-icons/ri";
 
-const pages = [
-  {
-    name: "Trang chủ",
-    path: "/"
-  },
-  {
-    name: "Tin tức",
-    path: "/"
-  },
-  {
-    name: "Cửa hàng",
-    path: "/"
-  },
-  {
-    name: "Manga",
-    path: "/"
-  },
-  {
-    name: "Light novel",
-    path: "/"
-  }
-];
 
-export default function Navbar() {
+export default function Navbar({ pages }) {
   /**
    * Amination
    */
@@ -62,7 +40,7 @@ export default function Navbar() {
                 >
                   <Link
                     className="p-2 flex items-center text-xs text-black uppercase font-semibold hover:opacity-100 hover:text-purple transform"
-                    href="/"
+                    href={page.path}
                   >
                     <span className="font text-lg">{page.name}</span>
                   </Link>
@@ -84,7 +62,7 @@ export default function Navbar() {
                 >
                   <Link
                     className="flex hover:opacity-100 hover:text-purple transform"
-                    href="/cart"
+                    href={"/cart"}
                   >
                     <RiShoppingCart2Line size={24}/>
                   </Link>
