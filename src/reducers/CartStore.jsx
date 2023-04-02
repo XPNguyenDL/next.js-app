@@ -10,35 +10,37 @@ export const updateItemQuantity = (item, quantity) => {
   };
 };
 
-const data = [
+
+const products = [
   {
     id: 1,
-    name: "Product 1",
-    price: 10.99,
-    quantity: 2,
-    image:
-      "https://s199.imacdn.com/vg/2022/10/12/dcb5b9169f8e39a0_097d879a510af296_18458116655539437756547.jpg"
+    name: "Throwback Hip Bag",
+    href: "#",
+    color: "Salmon",
+    price: "90000.00",
+    quantity: 1,
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
+    imageAlt:
+      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
   },
   {
     id: 2,
-    name: "Product 2",
-    price: 19.99,
+    name: "Medium Stuff Satchel",
+    href: "#",
+    color: "Blue",
+    price: "320000.00",
     quantity: 1,
-    image:
-      "https://s199.imacdn.com/vg/2022/10/12/dcb5b9169f8e39a0_097d879a510af296_18458116655539437756547.jpg"
-  },
-  {
-    id: 3,
-    name: "Product 3",
-    price: 5.99,
-    quantity: 4,
-    image:
-      "https://s199.imacdn.com/vg/2022/10/12/dcb5b9169f8e39a0_097d879a510af296_18458116655539437756547.jpg"
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
+    imageAlt:
+      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
   }
+  // More products...
 ];
 
 const initialState = {
-  items: data
+  items: products
 };
 
 export default function cartStore(state = initialState, action) {

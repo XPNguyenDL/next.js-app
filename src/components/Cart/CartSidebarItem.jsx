@@ -18,7 +18,7 @@ export default function CartSidebarItem({ product }) {
             <h3>
               <a href={product.href}>{product.name}</a>
             </h3>
-            <p className="ml-4">{FormatVND(product.price)}</p>
+            <p className="ml-4">{FormatVND(product.price * product.quantity)}</p>
           </div>
           <p className="text-gray-500 mt-1 text-sm">{product.color}</p>
         </div>

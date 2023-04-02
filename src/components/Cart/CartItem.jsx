@@ -1,6 +1,8 @@
-"use client"
+"use client";
 
+import FormatVND from "@/src/FormatCurrent/FormatVND";
 import { updateItemQuantity } from "@/src/reducers/CartStore";
+import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 
 export default function CartItem({ item }) {
@@ -12,41 +14,34 @@ export default function CartItem({ item }) {
     dispatch(updateItemQuantity(item, quantity));
   };
   return (
-    <div className="flex items-center justify-between border-b border-gray-300 pb-2">
-      <div className="flex items-center space-x-4">
+    <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+      <div className="flex items-center">
         <img
-          src={item.image}
-          alt={item.title}
-          className="w-16 h-16 object-cover"
+          src={item.imageSrc}
+          alt={item.imageAlt}
+          className="mr-6 h-32 w-32 object-cover"
         />
         <div>
-          <h2 className="font-bold">{item.title}</h2>
-          <p className="text-gray-500">${item.price.toFixed(2)}</p>
-          <div className="flex items-center space-x-2 mt-2">
-            <button className="text-gray-500" onClick={removeFromCart}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M10 19a9 9 0 100-18 9 9 0 000 18zM5 9a1 1 0 011-1h8a1 1 0 010 2H6a1 1 0 01-1-1zm4 4a1 1 0 100 2 1 1 0 000-2z"
-                  clipRule="evenodd"
-                />
-              </svg>
+          <h2 className="font-bold">{item.name}</h2>
+          <div className="mt-2 flex space-x-2">
+            <button className="text-gray-500 opacity-50 hover:opacity-100" onClick={() => updateQuantity(item.quantity - 1)}>
+              <AiOutlineMinus />
             </button>
             <input
               type="number"
               min="1"
               value={isNaN(item.quantity) ? "" : item.quantity}
-              onChange={e => updateQuantity(parseInt(e.target.value))}
-              className="border border-gray-300 w-16 h-8 text-center"
+              onChange={(e) => updateQuantity(parseInt(e.target.value))}
+              className="border-gray-300 h-8 w-16 border text-center"
             />
+            <button className="text-gray-500 opacity-50 hover:opacity-100" onClick={() => updateQuantity(item.quantity + 1)}>
+              <AiOutlinePlus />
+            </button>
           </div>
         </div>
       </div>
+
+      <p className="text-gray-500">{FormatVND(item.price * item.quantity)}</p>
     </div>
   );
 }

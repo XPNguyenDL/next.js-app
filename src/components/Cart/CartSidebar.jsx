@@ -2,44 +2,21 @@
 
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
+import { useSelector } from "react-redux";
+import FormatVND from "@/src/FormatCurrent/FormatVND";
+import CartSidebarItem from "./CartSidebarItem";
+
+//icon
 import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
-import CartSidebarItem from "./CartSidebarItem";
 import { RiShoppingCart2Line } from "react-icons/ri";
-import FormatVND from "@/src/FormatCurrent/FormatVND";
-
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "90000.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "320000.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-  }
-  // More products...
-];
 
 export default function CartSidebar() {
   const [open, setOpen] = useState(false);
 
-  const total = products
+  const cartItems = useSelector((state) => state.cart.items);
+
+  const total = cartItems
     .reduce((acc, item) => {
       if (!item.quantity) {
         return 0;
@@ -96,7 +73,7 @@ export default function CartSidebar() {
                             <ul
                               role="list"
                               className="divide-gray-200 -my-6 divide-y">
-                              {products.map((product) => (
+                              {cartItems.map((product) => (
                                 <li key={product.id} className="py-6">
                                   <CartSidebarItem product={product} />
                                 </li>
