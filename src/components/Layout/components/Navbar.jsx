@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
-import { RiShoppingCart2Line } from "react-icons/ri";
 import CartSidebar from "../../Cart/CartSidebar";
 import { useState } from "react";
-
+import UseReduce from "@/src/reducers/UseReduce";
 
 export default function Navbar({ pages }) {
   /**
@@ -35,39 +34,35 @@ export default function Navbar({ pages }) {
 
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 mt-1 mb-1">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="lg:flex items-center" id="example-navbar-danger">
-            <ul className="hidden xl:flex lg:flex-row list-none lg:ml-auto">
+      <nav className="relative mt-1 mb-1 flex flex-wrap items-center justify-between px-2">
+        <div className="container mx-auto flex flex-wrap items-center justify-between px-4">
+          <div className="items-center lg:flex" id="example-navbar-danger">
+            <ul className="hidden list-none lg:ml-auto lg:flex-row xl:flex">
               {pages.map((page, index) => (
                 <li
-                  className={`nav-item mx-2 inline-block relative ${NAVIGATION_BEFORE} ${NAVIGATION_AFTER} ${NAVIGATION_ANIMATION}`}
-                  key={index}
-                >
+                  className={`nav-item relative mx-2 inline-block ${NAVIGATION_BEFORE} ${NAVIGATION_AFTER} ${NAVIGATION_ANIMATION}`}
+                  key={index}>
                   <Link
-                    className="p-2 flex items-center text-xs text-black uppercase font-semibold hover:opacity-100 hover:text-purple transform"
-                    href={page.path}
-                  >
+                    className="flex transform items-center p-2 text-xs font-semibold uppercase text-black hover:text-purple hover:opacity-100"
+                    href={page.path}>
                     <span className="font text-lg">{page.name}</span>
                   </Link>
                 </li>
               ))}
               <li
-                className={`nav-item mx-2 flex relative items-center ${NAVIGATION_ANIMATION}`}
-              >
+                className={`nav-item relative mx-2 flex items-center ${NAVIGATION_ANIMATION}`}>
                 <Link
-                  className="flex hover:opacity-100 hover:text-purple transform"
-                  href="/"
-                >
+                  className="flex transform hover:text-purple hover:opacity-100"
+                  href="/">
                   <CgProfile size={24} />
                 </Link>
               </li>
               <li
-                  className={`nav-item mx-2 flex relative items-center ${NAVIGATION_ANIMATION}`}
-                  
-                >
+                className={`nav-item relative mx-2 flex items-center ${NAVIGATION_ANIMATION}`}>
+                <UseReduce>
                   <CartSidebar />
-                </li>
+                </UseReduce>
+              </li>
             </ul>
           </div>
         </div>
