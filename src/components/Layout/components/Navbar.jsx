@@ -1,6 +1,10 @@
+"use client"
+
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
 import { RiShoppingCart2Line } from "react-icons/ri";
+import CartSidebar from "../../Cart/CartSidebar";
+import { useState } from "react";
 
 
 export default function Navbar({ pages }) {
@@ -18,6 +22,8 @@ export default function Navbar({ pages }) {
   /**
    * UseState function
    */
+
+  const [open, setOpen] = useState(false);
 
   /**
    * Handle function
@@ -60,12 +66,7 @@ export default function Navbar({ pages }) {
                   className={`nav-item mx-2 flex relative items-center ${NAVIGATION_ANIMATION}`}
                   
                 >
-                  <Link
-                    className="flex hover:opacity-100 hover:text-purple transform"
-                    href={"/cart"}
-                  >
-                    <RiShoppingCart2Line size={24}/>
-                  </Link>
+                  <CartSidebar />
                 </li>
             </ul>
           </div>

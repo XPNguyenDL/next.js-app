@@ -41,7 +41,7 @@ const initialState = {
   items: data
 };
 
-export default function cartReducer(state = initialState, action) {
+export default function cartStore(state = initialState, action) {
   switch (action.type) {
     case "UPDATE_ITEM_QUANTITY": {
       const { item, quantity } = action.payload;
