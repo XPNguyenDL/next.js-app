@@ -16,7 +16,6 @@ export default function Sidebar({ pages }) {
    */
   const handleCloseSidebar = () => {
     setIsCLosed(true);
-    console.log(isClosed);
   };
   const handleOpenSidebar = () => {
     setTimeout(() => setIsCLosed(false), 700);
