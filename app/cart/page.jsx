@@ -1,4 +1,6 @@
-import CartReduce from "@/src/components/Cart/CartReduce";
+
+import CartSection from "@/src/components/Cart/CartSection";
+import UseReduce from "@/src/reducers/UseReduce";
 import React from "react";
 export const metadata = {
   title: "Giỏ hàng"
@@ -8,7 +10,9 @@ export const metadata = {
 export default function Cart() {
   return (
     <>
-      <CartReduce />
+      <UseReduce>
+        <CartSection/>
+      </UseReduce>
     </>
   );
 }
