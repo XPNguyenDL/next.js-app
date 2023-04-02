@@ -7,7 +7,7 @@ import "@/src/styles/animation.scss";
 export default function Description() {
   return (
     <div className="lg:flex lg:grid w-full xl:grid-cols-2 items-center bg-brown-light">
-      <div className="top-0 lg:sticky h-[260px] xl:h-screen overflow-hidden ">
+      <div className="hidden lg:block top-0 lg:sticky h-[260px] xl:h-screen overflow-hidden ">
         <div className="mx-auto w-[80%] z-[4] relative top-[20%] xl:top-1/2 text-center xl:text-left xl:left-[20%]">
             <h2 className="text-5xl font-bold text-white">Về chúng tôi</h2>
             <Link
@@ -21,7 +21,7 @@ export default function Description() {
           <Image src={Logo} className="mx-auto object-cover h-[260px] xl:h-screen w-screen w-full xl:max-w-[770px]" />
         </div>
       </div>
-      <div className="mx-auto px-10">
+      <div className="mx-auto p-10">
         <div className="m-auto max-w-[80%] text-base">
           <p>&nbsp;</p>
           <h2 className="mb-2.5 text-3xl">AMAK Store – Hiệu sách AMAK</h2>

@@ -33,7 +33,7 @@ export default function CategorySection() {
     <div className="mx-auto px-6 md:px-10 max-w-screen-2xl">
       <SectionHeader title="Danh mục" />
       <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex justify-center">
+        <div className="flex justify-center gap-3 w-[160vw] md:w-[110vw] lg:w-full xl:w-10/12 mx-auto">
           {categories.map((category, index) => (
             <CategoryItem
               key={index}
