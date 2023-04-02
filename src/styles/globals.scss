@@ -35,7 +35,7 @@ a {
   border-radius: 4px;
   background: rgba(127, 127, 127);
   &:hover {
-      background: rgba(127, 127, 127, 0.6);
+      background: rgba(127, 127, 127, 0.4);
   }
   &:active {
       background: rgba(127, 127, 127, 0.8);
@@ -45,7 +45,9 @@ a {
 
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;
+  background: rgb(255, 255, 255, 0);
+  opacity: 0;
+  height: 0px;
 }
 
 .scrollbar-hide {

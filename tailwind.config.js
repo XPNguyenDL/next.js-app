@@ -24,6 +24,9 @@ module.exports = {
       "brown-light": "rgb(227,225,219)",
       "white-opacity": "rgba(255,255,255,0.95)",
       white: "rgba(255,255,255)",
+      gray: {
+        100: "rgba(234, 234, 234, 0.8)"
+      },
       primary: {
         100: "#ebf8ff",
         300: "#90cdf4",
