@@ -18,7 +18,7 @@ export default function Description() {
             </Link>
         </div>
         <div className="absolute top-0 left-0 bottom-0 w-full">
-          <Image src={Logo} className="mx-auto object-cover h-[260px] xl:h-screen w-screen w-full xl:max-w-[770px]" />
+          <Image src={Logo} alt='description-image' className="mx-auto object-cover h-[260px] xl:h-screen w-screen w-full xl:max-w-[770px]" />
         </div>
       </div>
       <div className="mx-auto p-10">
