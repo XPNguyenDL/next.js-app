@@ -1,9 +1,18 @@
 import React from 'react'
+import { URL_API } from '../components/Services/Store';
 
-export default async function GetProduct() {
-const res = await fetch("https://localhost:7158/api/products?PageNumber=1&PageSize=4");
+export async function GetProduct() {
+const res = await fetch(`${URL_API}/api/products?PageNumber=1&PageSize=4`);
 
 if (!res.ok) throw new Error("Lỗi gòi");
-
   return res.json();
 }
+
+
+export async function GetProductBySlug(slug) {
+  const res = await fetch(`${URL_API}/api/products/bySlug/${slug}`);
+  
+  if (!res.ok) throw new Error("Lỗi gòi");
+    return res.json();
+  }
+
