@@ -12,6 +12,7 @@ module.exports = {
     extend: {},
     dropShadow: {
       'top': '0 35px 35px rgba(0, 0, 0, 0.25)',
+      'lightbox': '0 16px 24px rgba(0, 0, 0, 0.2)',
     },
     colors: {
       transparent: "rgba(0,0,0,0)",
