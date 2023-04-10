@@ -1,7 +1,7 @@
 import React from "react";
 import ProductItem from "../Product/ProductItem";
 import SectionHeader from "./SectionHeader";
-import GetProduct from "@/src/API/GetProduct";
+import { GetProduct } from "@/src/API/GetProduct";
 
 export default async function NewProduct() {
   //Get data
@@ -16,7 +16,6 @@ export default async function NewProduct() {
           {data.items.map((item) => {
             return <ProductItem key={item.id} product={item}/>
           })}
-          
         </div>
       </div>
     </div>

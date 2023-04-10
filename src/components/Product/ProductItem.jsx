@@ -21,7 +21,7 @@ export default function ProductItem({ product }) {
   return (
     <div className="group relative mb-2.5 overflow-hidden bg-white">
       <div className="px-5">
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden shadow-lg rounded-md">
           <Link href={`product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
             <Image src={journey} alt="category-image" className="invisible" />
             {pictures.map((item) => {
@@ -42,9 +42,9 @@ export default function ProductItem({ product }) {
             })}
           </Link>
         </div>
-        <div className="mt-1.5 w-full">
-          <h3 className="relative mb-1.5 min-h-[18px] text-sm hover:text-purple">
-            <Link href={`product/123`} title={"Mừng cậu trở về"}>
+        <div className="mt-5 w-full text-center">
+          <h3 className="relative mb-1.5 min-h-[18px] text-base font-bold hover:text-purple">
+            <Link href={`product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
               {product.name}
             </Link>
           </h3>
