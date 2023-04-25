@@ -15,7 +15,7 @@ export default function CartSection() {
       if (!item.quantity) {
         return 0;
       }
-      return acc + item.price * item.quantity;
+      return acc + (item.price - item.price * item.discount / 100)* item.quantity;
     }, 0)
     .toFixed(2);
 
@@ -53,7 +53,7 @@ export default function CartSection() {
             </div>
             <div className="my-5 text-center">
               <button className="btn-slide w-full rounded-none text-white after:bg-danger-600 hover:after:bg-gray-100 ">
-                <Link href="/collections" title="Xem ngay">
+                <Link href="/checkouts" title="Xem ngay">
                   Thanh toán
                 </Link>
               </button>

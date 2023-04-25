@@ -1,15 +1,16 @@
 "use client";
 
 import FormatVND from "@/src/FormatCurrent/FormatVND";
-import { removeItem, updateItemQuantity } from "@/src/reducers/CartStore";
+import { removeProduct, updateItemQuantity } from "@/src/reducers/CartStore";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
+import { URL_API } from "../Services/Store";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
   const removeFromCart = () => {
-    dispatch(removeItem(item.id));
+    dispatch(removeProduct(item.id));
   };
   const updateQuantity = (quantity) => {
     if (quantity >= 0) {
@@ -20,7 +21,7 @@ export default function CartItem({ item }) {
     <div className="flex items-center justify-between border-b border-gray-100 pb-2">
       <div className="flex items-center">
         <img
-          src={item.imageSrc}
+          src={URL_API + `/` + item.imageSrc}
           alt={item.imageAlt}
           className="mr-6 h-32 w-32 object-cover"
         />
@@ -52,9 +53,25 @@ export default function CartItem({ item }) {
         onClick={() => removeFromCart(item.id)}
         className="ml-auto text-danger-700 opacity-100 hover:opacity-70" 
         size={32}/>
-        <p className="text-lg font-bold">
-          {FormatVND(item.price * item.quantity)}
-        </p>
+        <div>
+            {item.discount > 0 ? (
+              <div>
+                <span className="text-danger-700">
+                  {FormatVND(
+                    (item.price - (item.price * item.discount) / 100) *
+                    item.quantity
+                  )}
+                </span>
+                <span className="ml-1.5 text-gray-dark">
+                  <del>{FormatVND(item.price * item.quantity)}</del>
+                </span>
+              </div>
+            ) : (
+              <div>
+                <span>{FormatVND(item.price * item.quantity)}</span>
+              </div>
+            )}
+          </div>
       </div>
     </div>
   );

@@ -1,13 +1,15 @@
 import FormatVND from "@/src/FormatCurrent/FormatVND";
+import Link from "next/link";
 import React from "react";
+import { URL_API } from "../Services/Store";
 
 export default function CartSidebarItem({ product }) {
   return (
     <div className="flex">
       <div className="border-gray-200 h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border">
         <img
-          src={product.imageSrc}
-          alt={product.imageAlt}
+          src={URL_API + `/` + product.imageSrc}
+          alt={product.urlSlug}
           className="h-full w-full object-cover object-center"
         />
       </div>
@@ -16,11 +18,28 @@ export default function CartSidebarItem({ product }) {
         <div>
           <div className="flex justify-between text-base font-medium">
             <h3>
-              <a href={product.href}>{product.name}</a>
+              <Link href={`/product/${product.urlSlug}`}>{product.name}</Link>
             </h3>
-            <p className="ml-4">{FormatVND(product.price * product.quantity)}</p>
           </div>
-          <p className="text-gray-500 mt-1 text-sm">{product.color}</p>
+          <div>
+            {product.discount > 0 ? (
+              <div>
+                <span className="text-danger-700">
+                  {FormatVND(
+                    (product.price - (product.price * product.discount) / 100) *
+                      product.quantity
+                  )}
+                </span>
+                <span className="ml-1.5 text-gray-dark">
+                  <del>{FormatVND(product.price * product.quantity)}</del>
+                </span>
+              </div>
+            ) : (
+              <div>
+                <span>{FormatVND(product.price * product.quantity)}</span>
+              </div>
+            )}
+          </div>
         </div>
         <div className="flex flex-1 items-end justify-between text-sm">
           <p className="text-gray-500">Số lượng {product.quantity}</p>
