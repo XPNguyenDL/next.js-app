@@ -3,10 +3,10 @@ import Link from "next/link";
 import React from "react";
 import journey from "@/public/assets/images/home/journey.jpg";
 import FormatVND from "@/src/FormatCurrent/FormatVND";
+import { URL_API } from "../Services/Store";
 
 export default function ProductItem({ product }) {
   let pictures = product.pictures;
-  const url = "https://localhost:7158/";
   if (pictures.length < 1 || pictures == undefined) {
     pictures = [
       {
@@ -28,7 +28,7 @@ export default function ProductItem({ product }) {
               return (
                 <Image
                   key={item.id}
-                  src={item.path === journey ? item.path : url + item.path}
+                  src={item.path === journey ? item.path : URL_API + "/" + item.path}
                   sizes="(max-width: 768px) 30vw,
                     (max-width: 1024px) 25vw,
                     (max-width: 1280px) 40vw,

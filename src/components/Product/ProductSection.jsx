@@ -1,15 +1,41 @@
-
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
-import { GetProductBySlug } from "@/src/API/GetProduct";
+import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { URL_API } from "../Services/Store";
 import FormatVND from "@/src/FormatCurrent/FormatVND";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
+import "@/src/styles/animation.scss";
+import { useSelector } from "react-redux";
+import { addProduct, updateItemQuantity } from "@/src/reducers/CartStore";
 
-export default async function ProductSection({ slug }) {
-  const productData = GetProductBySlug(slug);
-  const data = await productData;
+export default function ProductSection({ data }) {
+  const [quantity, setQuantity] = useState(1);
+
+  const dispatch = useDispatch();
+  const currentProduct = useSelector((state) => state.cart.items);
+  console.log(currentProduct);
+
+  const handleAddToCart = () => {
+    const result = {
+      id: data.id,
+      name: data.name,
+      price: data.price,
+      urlSlug: data.urlSlug,
+      discount: data.discount,
+      quantity: quantity,
+      imageSrc: data.pictures[0].path
+    };
+    console.log(currentProduct);
+    console.log(result);
+    if (currentProduct.some((item) => item.id === result.id)) {
+      dispatch(updateItemQuantity(result, quantity + 1));
+      setQuantity(pre => pre + 1);
+    } else {
+      dispatch(addProduct(result));
+    }
+  };
   return (
     <div>
       <Breadcrumb currentPlace={data.name} />
@@ -20,12 +46,14 @@ export default async function ProductSection({ slug }) {
               <div className="top-[65px] w-full pb-px">
                 {data.pictures.map((item) => {
                   return (
-                    <div className="mb-2.5 border border-gray-light">
+                    <div
+                      key={item.id}
+                      className="mb-2.5 border border-gray-light">
                       <Image
-                        key={item.id}
                         src={URL_API + "/" + item.path}
                         width={1200}
                         height={1200}
+                        alt={item.urlSlug}
                       />
                     </div>
                   );
@@ -36,10 +64,10 @@ export default async function ProductSection({ slug }) {
               <div className="sticky top-[65px] mx-auto w-[91%] pb-px">
                 <div className="mb-2.5 border border-gray-light">
                   <Image
-                    key={data.pictures[1].id}
-                    src={URL_API + "/" + data.pictures[1].path}
+                    src={URL_API + "/" + data.pictures[0].path}
                     width={1200}
                     height={1200}
+                    alt={data.urlSlug}
                   />
                 </div>
               </div>
@@ -66,21 +94,31 @@ export default async function ProductSection({ slug }) {
                 </div>
               )}
             </div>
-            <div className="mt-2.5">
-              <button
-                className="text-gray-500 opacity-50 hover:opacity-100 mr-1.5">
+            <div className="m-2.5">
+              <button className="mr-1.5 text-gray-500 opacity-50 hover:opacity-100">
                 <AiOutlineMinus />
               </button>
               <input
                 type="number"
                 min="1"
-                value={0}
+                defaultValue={1}
+                onChange={(e) => setQuantity(e.target.value)}
                 className="border-gray-300 h-8 w-16 border text-center"
               />
-              <button
-                className="text-gray-500 opacity-50 hover:opacity-100">
+              <button className="ml-1.5 text-gray-500 opacity-50 hover:opacity-100">
                 <AiOutlinePlus />
               </button>
+            </div>
+            <div className="mt-1.5 text-center font-bold">
+              <button
+                className="btn-slide w-full rounded-none text-white after:bg-danger-600 hover:after:bg-gray-100"
+                onClick={handleAddToCart}>
+                Thêm vào giỏ hàng
+              </button>
+            </div>
+            <div className="my-5 border-t border-dotted py-2.5 ">
+              <div className="font-bold">Mô tả:</div>
+              <span>{data.description}</span>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { CounterState } from '@reduxjs/toolkit'
+import { CounterState } from "@reduxjs/toolkit";
 
 export const updateItemQuantity = (item, quantity) => {
   return {
@@ -10,66 +10,23 @@ export const updateItemQuantity = (item, quantity) => {
   };
 };
 
-export function removeItem(itemId) {
+export function removeProduct(itemId) {
   return { type: "REMOVE_ITEM", itemId };
 }
 
+export function addProduct(data) {
+  return {
+    type: "ADD_ITEM",
+    payload: {
+      data
+    }
+  };
+}
 
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: "90000.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "320000.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-  },
-  {
-    id: 3,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "320000.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-  },
-  {
-    id: 4,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: "320000.00",
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch."
-  }
-  
-  // More products...
-];
+const products = localStorage.getItem("cart-products");
 
 const initialState = {
-  items: products
+  items: JSON.parse(products) ?? []
 };
 
 export default function cartStore(state = initialState, action) {
@@ -89,15 +46,22 @@ export default function cartStore(state = initialState, action) {
       };
     }
     case "REMOVE_ITEM":
-      state = state.items.filter(item => item.id !== action.itemId);
+      state = state.items.filter((item) => item.id !== action.itemId);
       return {
         ...state,
         items: state
+      };
+    case "ADD_ITEM":
+      const newItems = [...state.items, action.payload.data];
+      console.log(newItems);
+      console.log(action.payload.data);
+      localStorage.setItem("cart-products", JSON.stringify(newItems));
+      return {
+        ...state,
+        items: newItems
       };
     // ...other cases
     default:
       return state;
   }
-};
-
-
+}

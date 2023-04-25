@@ -12,15 +12,6 @@ export default async function CollectionSection() {
       {data.items.map((item) => {
         return <ProductItem key={item.id} product={item} />;
       })}
-      {data.items.map((item) => {
-        return <ProductItem key={item.id} product={item} />;
-      })}
-      {data.items.map((item) => {
-        return <ProductItem key={item.id} product={item} />;
-      })}
-      {data.items.map((item) => {
-        return <ProductItem key={item.id} product={item} />;
-      })}
     </div>
   );
 }
