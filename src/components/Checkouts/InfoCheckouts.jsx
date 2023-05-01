@@ -1,9 +1,12 @@
-import React from "react";
+"use client"
+
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { BsCartCheck } from "react-icons/bs";
 import FormCheckouts from "./FormCheckouts";
 
 export default function InfoCheckouts() {
+
   return (
     <div className="pt-16 flex justify-center">
       <div>
@@ -31,8 +34,7 @@ export default function InfoCheckouts() {
           </nav>
         </div>
         <h2 className="text-lg font-normal">Thông tin giao hàng</h2>
-        <FormCheckouts />
-        
+        <FormCheckouts/>
       </div>
     </div>
   );

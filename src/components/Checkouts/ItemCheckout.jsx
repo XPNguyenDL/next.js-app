@@ -1,10 +1,19 @@
+"use client"
+
 import FormatVND from "@/src/FormatCurrent/FormatVND";
 import React from "react";
 import { URL_API } from "../Services/Store";
-import { AiOutlineMinus } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
+import { useDispatch } from "react-redux";
+import { removeProduct } from "@/src/reducers/CartStore";
 
 export default function ItemCheckout({ item }) {
+
+  const dispatch = useDispatch();
+  const removeFromCart = () => {
+    dispatch(removeProduct(item.id));
+  };
+
   return (
     <div className="flex items-center justify-between border-b border-gray-100 pb-2 px-5">
       <div className="flex items-center">
@@ -15,10 +24,13 @@ export default function ItemCheckout({ item }) {
         />
       </div>
       <div>
+        <div onClick={removeFromCart}>
+
         <RiCloseLine
           className="ml-auto text-danger-700 opacity-100 hover:opacity-70"
           size={32}
         />
+        </div>
         <div>
           {item.discount > 0 ? (
             <div>

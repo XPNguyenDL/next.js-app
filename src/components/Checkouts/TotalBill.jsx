@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import ItemCheckout from "./ItemCheckout";
 import FormatVND from "@/src/FormatCurrent/FormatVND";
+import UseReduce from "@/src/reducers/UseReduce";
 
 export default function TotalBill() {
   const [data, setData] = useState([]);
@@ -10,38 +11,44 @@ export default function TotalBill() {
 
   useEffect(() => {
     const products = localStorage.getItem("cart-products");
-    setData(JSON.parse(products));
+    if (products) {
+      setData(JSON.parse(products));
 
-    const total = JSON.parse(products)
-      .reduce((acc, item) => {
-        if (!item.quantity) {
-          return 0;
-        }
-        return (
-          acc +
-          (item.price - (item.price * item.discount) / 100) * item.quantity
-        );
-      }, 0)
-      .toFixed(2);
-    setTotal(total);
-  }, [data, total]);
+      const total = JSON.parse(products)
+        .reduce((acc, item) => {
+          if (!item.quantity) {
+            return 0;
+          }
+          return (
+            acc +
+            (item.price - (item.price * item.discount) / 100) * item.quantity
+          );
+        }, 0)
+        .toFixed(2);
+      setTotal(total);
+    }
+  }, [data]);
 
   return (
     <div className="container mx-auto mt-5">
-        <div className="px-5 text-xl font-bold mb-5">Thông tin đơn hàng</div>
+      <div className="mb-5 px-5 text-xl font-bold">Thông tin đơn hàng</div>
       <div className="flex h-96 max-h-96 flex-col space-y-4 overflow-y-auto">
         {data &&
           data.length > 0 &&
           data.map((item) => (
             <div key={item.id}>
-              <ItemCheckout item={item} />
+              <UseReduce>
+                <ItemCheckout item={item} />
+              </UseReduce>
             </div>
           ))}
       </div>
       <div className="flex justify-end px-5">
-        <div className="text-2xl my-5">
+        <div className="my-5 text-2xl">
           Tổng tiền:
-          <span className="font-bold text-danger-600 ml-2.5">{FormatVND(total)}</span>
+          <span className="ml-2.5 font-bold text-danger-600">
+            {FormatVND(total)}
+          </span>
         </div>
       </div>
     </div>
