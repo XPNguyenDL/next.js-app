@@ -9,7 +9,7 @@ export default async function CollectionSection() {
 
   return (
     <div className="container mx-auto grid grid-cols-2 gap-4 xl:grid-cols-4">
-      {data.items.map((item) => {
+      {data.result.items.map((item) => {
         return <ProductItem key={item.id} product={item} />;
       })}
     </div>

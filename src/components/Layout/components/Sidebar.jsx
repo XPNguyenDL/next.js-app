@@ -47,7 +47,7 @@ export default function Sidebar({ pages }) {
         }`}
         aria-label="Sidebar"
       >
-        <div className="overflow-y-hidden bg-secondary-100 h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
+        <div className="bg-secondary-100 h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 ">
           <ul className="space-y-2 h-full">
             {pages.map((page, index) => (
               <li className="nav-item" key={index}>

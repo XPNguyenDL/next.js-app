@@ -6,7 +6,7 @@ import CartSidebar from "../../Cart/CartSidebar";
 import { useState } from "react";
 import UseReduce from "@/src/reducers/UseReduce";
 
-export default function Navbar({ pages }) {
+export default function NavbarAdmin({ pages }) {
   /**
    * Amination
    */
@@ -18,19 +18,6 @@ export default function Navbar({ pages }) {
   const NAVIGATION_AFTER =
     "after:absolute after:h-[2px] after:w-[35%] after:bg-purple after:right-0 after:bottom-0 after:opacity-0 hover:after:opacity-100 hover:after:right-[65%]";
 
-  /**
-   * UseState function
-   */
-
-  const [open, setOpen] = useState(false);
-
-  /**
-   * Handle function
-   */
-
-  /**
-   * UseEffect function
-   */
 
   return (
     <>
@@ -49,20 +36,6 @@ export default function Navbar({ pages }) {
                   </Link>
                 </li>
               ))}
-              <li
-                className={`nav-item relative mx-2 flex items-center ${NAVIGATION_ANIMATION}`}>
-                <Link
-                  className="flex transform hover:text-purple hover:opacity-100"
-                  href="/login">
-                  <CgProfile size={24} />
-                </Link>
-              </li>
-              <li
-                className={`nav-item relative mx-2 flex items-center ${NAVIGATION_ANIMATION}`}>
-                <UseReduce>
-                  <CartSidebar />
-                </UseReduce>
-              </li>
             </ul>
           </div>
         </div>

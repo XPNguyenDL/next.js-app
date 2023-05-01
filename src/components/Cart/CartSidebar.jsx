@@ -15,7 +15,6 @@ export default function CartSidebar() {
   const [open, setOpen] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.items);
-  console.log(cartItems);
   const total = cartItems
     .reduce((acc, item) => {
       if (!item.quantity) {

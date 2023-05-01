@@ -1,9 +1,18 @@
+"use client"
+
 import FormatVND from "@/src/FormatCurrent/FormatVND";
 import Link from "next/link";
 import React from "react";
 import { URL_API } from "../Services/Store";
+import { useDispatch } from "react-redux";
+import { removeProduct } from "@/src/reducers/CartStore";
 
 export default function CartSidebarItem({ product }) {
+  const dispatch = useDispatch();
+  const removeFromCart = () => {
+    dispatch(removeProduct(product.id));
+  };
+
   return (
     <div className="flex">
       <div className="border-gray-200 h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border">
@@ -47,7 +56,8 @@ export default function CartSidebarItem({ product }) {
           <div className="flex">
             <button
               type="button"
-              className="text-indigo-600 hover:text-indigo-500 font-medium">
+              className="text-indigo-600 hover:text-indigo-500 font-medium"
+              onClick={removeFromCart}>
               Xóa
             </button>
           </div>
