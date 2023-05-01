@@ -26,8 +26,6 @@ export default function ProductSection({ data }) {
       quantity: quantity,
       imageSrc: data.pictures.length > 0 ? data.pictures[0].path : ""
     };
-    console.log(currentProduct);
-    console.log(result);
     if (currentProduct.some((item) => item.id === result.id)) {
       dispatch(updateItemQuantity(result, quantity + 1));
       setQuantity(pre => pre + 1);

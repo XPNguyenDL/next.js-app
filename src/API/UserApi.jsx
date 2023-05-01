@@ -15,7 +15,6 @@ export async function LoginApi(data) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       return data;
     })
 }

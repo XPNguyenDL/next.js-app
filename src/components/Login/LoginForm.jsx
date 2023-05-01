@@ -20,7 +20,6 @@ export default function LoginForm() {
 
     const res = LoginApi(dataLogin);
     const data = await res;
-    console.log(data);
     if (data.isSuccess) {
        if( confirm("Đăng nhập thành công")) {
         localStorage.setItem("token", `bearer ${data.result.token}`);

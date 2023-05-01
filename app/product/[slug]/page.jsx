@@ -8,7 +8,6 @@ import { notFound } from 'next/navigation';
 export default async function page({ params }) {
   const productData = GetProductBySlug(params.slug);
   const data = await productData;
-  console.log(data);
   if (!data.isSuccess) return notFound();
 
 

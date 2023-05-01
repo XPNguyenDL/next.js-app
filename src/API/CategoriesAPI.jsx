@@ -11,7 +11,6 @@ export async function getCategoriesByQueries(parameters) {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       return data;
     });
 }

@@ -8,7 +8,6 @@ export default function FilterCategories({ setKeyword }) {
 
   const handleFilterPosts = (e) => {
     e.preventDefault();
-    console.log(keywordRef.current.value);
     setKeyword(keywordRef.current.value);
   };
 
