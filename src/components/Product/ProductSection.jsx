@@ -15,7 +15,6 @@ export default function ProductSection({ data }) {
 
   const dispatch = useDispatch();
   const currentProduct = useSelector((state) => state.cart.items);
-  console.log(currentProduct);
 
   const handleAddToCart = () => {
     const result = {
@@ -25,7 +24,7 @@ export default function ProductSection({ data }) {
       urlSlug: data.urlSlug,
       discount: data.discount,
       quantity: quantity,
-      imageSrc: data.pictures[0].path
+      imageSrc: data.pictures.length > 0 ? data.pictures[0].path : ""
     };
     console.log(currentProduct);
     console.log(result);
@@ -64,7 +63,7 @@ export default function ProductSection({ data }) {
               <div className="sticky top-[65px] mx-auto w-[91%] pb-px">
                 <div className="mb-2.5 border border-gray-light">
                   <Image
-                    src={URL_API + "/" + data.pictures[0].path}
+                    src={URL_API + "/" + data.pictures.length > 0 ? data.pictures[0].path : ""}
                     width={1200}
                     height={1200}
                     alt={data.urlSlug}

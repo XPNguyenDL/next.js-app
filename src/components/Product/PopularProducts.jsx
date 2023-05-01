@@ -13,7 +13,7 @@ export default async function PopularProducts() {
       <SectionHeader title="Sản phẩm khác" />
       <div className="container mx-auto">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:grid-cols-4">
-          {data.items.map((item) => {
+          {data.result.items.map((item) => {
             return <ProductItem key={item.id} product={item}/>
           })}
         </div>

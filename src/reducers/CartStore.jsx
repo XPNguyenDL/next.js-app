@@ -23,10 +23,17 @@ export function addProduct(data) {
   };
 }
 
-const products = localStorage.getItem("cart-products");
+const products = () => {
+  if (typeof localStorage !== "undefined") {
+    return JSON.parse(localStorage.getItem("cart-products"));
+    // localStorage is supported
+  } else {
+    return [];
+  }
+};
 
 const initialState = {
-  items: JSON.parse(products) ?? []
+  items: products() ?? []
 };
 
 export default function cartStore(state = initialState, action) {
@@ -40,6 +47,7 @@ export default function cartStore(state = initialState, action) {
       }
       const newItems = [...state.items];
       newItems[index] = { ...item, quantity };
+      localStorage.setItem("cart-products", JSON.stringify(newItems));
       return {
         ...state,
         items: newItems
@@ -47,14 +55,13 @@ export default function cartStore(state = initialState, action) {
     }
     case "REMOVE_ITEM":
       state = state.items.filter((item) => item.id !== action.itemId);
+      localStorage.setItem("cart-products", JSON.stringify(state));
       return {
         ...state,
         items: state
       };
     case "ADD_ITEM":
       const newItems = [...state.items, action.payload.data];
-      console.log(newItems);
-      console.log(action.payload.data);
       localStorage.setItem("cart-products", JSON.stringify(newItems));
       return {
         ...state,
