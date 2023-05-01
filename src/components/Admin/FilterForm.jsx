@@ -29,7 +29,7 @@ export default function FilterForm({ setKeyword }) {
       <div className="my-auto">
         <button
           type="submit"
-          className=" text-gray-900 border-gray-200 mr-2 rounded-full border bg-gray-500 py-2.5 px-5 text-sm font-medium text-white duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
+          className="text-gray-900 border-gray-200 mr-2 rounded-full border bg-gray-500 py-2.5 px-5 text-sm font-medium text-white duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
           Tìm/Lọc
         </button>
         <button
