@@ -9,6 +9,7 @@ import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import "@/src/styles/animation.scss";
 import { useSelector } from "react-redux";
 import { addProduct, updateItemQuantity } from "@/src/reducers/CartStore";
+import journey from "@/public/assets/images/home/journey.jpg";
 
 export default function ProductSection({ data }) {
   const [quantity, setQuantity] = useState(1);
@@ -23,7 +24,7 @@ export default function ProductSection({ data }) {
       price: data.price,
       urlSlug: data.urlSlug,
       discount: data.discount,
-      quantity: quantity,
+      quantity: 1,
       imageSrc: data.pictures.length > 0 ? data.pictures[0].path : ""
     };
     if (currentProduct.some((item) => item.id === result.id)) {
@@ -61,7 +62,7 @@ export default function ProductSection({ data }) {
               <div className="sticky top-[65px] mx-auto w-[91%] pb-px">
                 <div className="mb-2.5 border border-gray-light">
                   <Image
-                    src={URL_API + "/" + data.pictures.length > 0 ? data.pictures[0].path : ""}
+                    src={data.pictures.length > 0 ? `${URL_API}/${data.pictures[0].path}` : journey}
                     width={1200}
                     height={1200}
                     alt={data.urlSlug}
@@ -92,19 +93,7 @@ export default function ProductSection({ data }) {
               )}
             </div>
             <div className="m-2.5">
-              <button className="mr-1.5 text-gray-500 opacity-50 hover:opacity-100">
-                <AiOutlineMinus />
-              </button>
-              <input
-                type="number"
-                min="1"
-                defaultValue={1}
-                onChange={(e) => setQuantity(e.target.value)}
-                className="border-gray-300 h-8 w-16 border text-center"
-              />
-              <button className="ml-1.5 text-gray-500 opacity-50 hover:opacity-100">
-                <AiOutlinePlus />
-              </button>
+             <span>Số lượng: {data.quantity}</span>
             </div>
             <div className="mt-1.5 text-center font-bold">
               <button
