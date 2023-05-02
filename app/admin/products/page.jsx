@@ -1,4 +1,5 @@
-import FilterForm from '@/src/components/Admin/FilterForm'
+
+import ProductsManager from '@/src/components/Admin/Products/ProductsManager'
 import React from 'react'
 
 export default function page() {
@@ -7,7 +8,7 @@ export default function page() {
       <div>
         <h1 className='text-xl font-bold'>Thông tin sản phẩm</h1>
       </div>
-      <FilterForm />
+      <ProductsManager />
     </div>
   )
 }
