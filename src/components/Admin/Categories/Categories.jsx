@@ -1,8 +1,9 @@
 "use client";
-import { getCategoriesByQueries } from "@/src/API/CategoriesAPI";
+import { deleteCategory, getCategoriesByQueries } from "@/src/API/CategoriesAPI";
 import React, { useEffect, useState } from "react";
 import FilterCategories from "./FilterCategories";
 import Link from "next/link";
+import Pager from "../../Pager/Pager";
 
 export default function CategoriesManager() {
   // useState
@@ -16,9 +17,26 @@ export default function CategoriesManager() {
     window.scroll(0, 0);
   };
 
+  const handleDelete = (e, id) => {
+    e.preventDefault();
+    DeleteCategory(id);
+
+    async function DeleteCategory(id) {
+      if (confirm("Bạn có chắc muốn xóa?")) {
+        const res = await deleteCategory(id);
+        if (res) {
+          alert("Xóa thành công");
+          // location.reload();
+        } else {
+          alert("Xóa thất bại");
+        }
+      }
+    }
+  };
+
   useEffect(() => {
-    fetchPosts();
-    async function fetchPosts() {
+    fetchCategory();
+    async function fetchCategory() {
       const queries = new URLSearchParams({
         PageNumber: pageNumber || 1,
         PageSize: 10,
@@ -49,22 +67,27 @@ export default function CategoriesManager() {
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 ">
-                      Index
+                      Thứ tự
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 ">
-                      Name
+                      Tên danh mục
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 ">
+                      Mô tả
                     </th>
                     <th
                       scope="col"
                       className="px-6 py-3 text-right text-xs font-bold uppercase text-gray-500 ">
-                      Edit
+                      Chỉnh sửa
                     </th>
                     <th
                       scope="col"
-                      className="px-6 py-3 text-right text-xs font-bold uppercase text-gray-500 ">
-                      Delete
+                      className="px-6 py-3 text-right text-xs font-bold uppercase text-danger-700">
+                      Xóa
                     </th>
                   </tr>
                 </thead>
@@ -79,19 +102,22 @@ export default function CategoriesManager() {
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
                             {item.name}
                           </td>
-                          <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                            <a
-                              className="text-green-500 hover:text-green-700"
-                              href="#">
-                              Edit
-                            </a>
+                          <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
+                            {item.description}
                           </td>
                           <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                            <a
-                              className="text-red-500 hover:text-red-700"
-                              href="#">
-                              Delete
-                            </a>
+                            <Link
+                              className="text-green-500 hover:text-green-700"
+                              href={`/admin/categories/edit/${item.id}`}>
+                              Chỉnh sửa
+                            </Link>
+                          </td>
+                          <td className="whitespace-nowrap cursor-pointer px-6 py-4 text-right text-sm font-medium">
+                            <div
+                              className="text-danger-500 hover:text-danger-700"
+                              onClick={(e) => handleDelete(e, item.id)}>
+                              Xóa
+                            </div>
                           </td>
                         </tr>
                       );
@@ -106,6 +132,7 @@ export default function CategoriesManager() {
                 </tbody>
               </table>
             </div>
+              <Pager metadata={metadata} onPageChange={handleChangePage} />
           </div>
         </div>
       </div>
