@@ -20,3 +20,34 @@ export async function CheckoutsAPI(data) {
     .catch((error) => {
     });
 }
+
+export async function getOrdersByQueries(parameters) {
+  return fetch(`${URL_API}/api/orders?${parameters}`, {
+    method: "GET"
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Lỗi gòi");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data;
+    });
+}
+
+
+export async function ToggleOrder(id) {
+  return fetch(`${URL_API}/api/orders/toggle/${id}`, {
+    method: "GET"
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Lỗi gòi");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data;
+    });
+}

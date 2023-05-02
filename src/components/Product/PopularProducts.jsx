@@ -1,4 +1,4 @@
-import { GetProduct } from '@/src/API/GetProduct';
+import { GetProduct } from '@/src/API/ProductAPI';
 import React from 'react'
 import SectionHeader from '../Home/SectionHeader';
 import ProductItem from './ProductItem';

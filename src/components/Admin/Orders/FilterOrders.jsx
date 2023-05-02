@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React, { useRef } from "react";
 
-export default function FilterForm({ setKeyword }) {
+export default function FilterOrders({ setKeyword }) {
   const keywordRef = useRef();
 
   const handleFilterPosts = (e) => {
@@ -29,18 +29,13 @@ export default function FilterForm({ setKeyword }) {
       <div className="my-auto">
         <button
           type="submit"
-          className="text-gray-900 border-gray-200 mr-2 rounded-full border bg-gray-500 py-2.5 px-5 text-sm font-medium text-white duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
+          className=" text-gray-900 border-gray-200 mr-2 rounded-full border bg-gray-500 py-2.5 px-5 text-sm font-medium text-white duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
           Tìm/Lọc
         </button>
         <button
           onClick={handleClearFilter}
           className="text-gray-900 border-gray-200 mr-2 mb-2 rounded-full border bg-secondary-300 py-2.5 px-5 text-sm font-medium  duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
           Bỏ lọc
-        </button>
-        <button className="text-gray-900 border-gray-200 mr-2 mb-2 rounded-full border bg-success py-2.5 px-5 text-sm font-medium text-white duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
-          <Link href="/admin/product/edit">
-            Thêm mới
-          </Link>
         </button>
       </div>
     </form>

@@ -21,12 +21,13 @@ export default function LoginForm() {
     const res = LoginApi(dataLogin);
     const data = await res;
     if (data.isSuccess) {
-       if( confirm("Đăng nhập thành công")) {
+      if (confirm("Đăng nhập thành công")) {
         localStorage.setItem("token", `bearer ${data.result.token}`);
-        router.push('/admin')
-       }
+        router.push("/admin");
+      }
     } else {
-        alert(data.errors[0]);
+      setError(data.errors[0]);
+      // alert(data.errors[0]);
     }
   };
 
@@ -37,7 +38,7 @@ export default function LoginForm() {
         onSubmit={handleLogin}
         className="mt-2.5 w-full max-w-md">
         {error ? (
-          <div className="mb-2.5 text-center text-danger-600">123</div>
+          <div className="mb-2.5 text-center text-danger-600">{error}</div>
         ) : (
           <></>
         )}

@@ -1,7 +1,7 @@
 import React from "react";
 import ProductItem from "../Product/ProductItem";
 import SectionHeader from "./SectionHeader";
-import { GetProduct } from "@/src/API/GetProduct";
+import { GetProduct } from "@/src/API/ProductAPI";
 
 export default async function NewProduct() {
   //Get data
