@@ -38,7 +38,7 @@ export default function FilterCategories({ setKeyword }) {
           Bỏ lọc
         </button>
         <button className="text-gray-900 border-gray-200 mr-2 mb-2 rounded-full border bg-success py-2.5 px-5 text-sm font-medium text-white duration-500 hover:bg-gray-100 hover:text-purple focus:z-10">
-          <Link href="/admin/category/edit">
+          <Link href="/admin/categories/edit">
             Thêm mới
           </Link>
         </button>
