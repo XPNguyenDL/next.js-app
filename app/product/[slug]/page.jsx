@@ -1,4 +1,4 @@
-import { GetProductBySlug } from "@/src/API/GetProduct";
+import { GetProductBySlug } from "@/src/API/ProductAPI";
 import PopularProducts from "@/src/components/Product/PopularProducts";
 import ProductSection from "@/src/components/Product/ProductSection";
 import UseReduce from "@/src/reducers/UseReduce";
