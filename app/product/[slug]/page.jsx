@@ -16,7 +16,7 @@ export default async function page({ params }) {
       <UseReduce>
         <ProductSection data={data.result} />
       </UseReduce>
-      <PopularProducts />
+      <PopularProducts slug={params.slug}/>
     </div>
   );
 }
