@@ -95,7 +95,7 @@ export default function OrderManager() {
                       return (
                         <tr key={item.id}>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
-                            {index + 1}
+                            {index + 1 + (pageNumber - 1) * 10}
                           </td>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
                             <div>
@@ -149,7 +149,11 @@ export default function OrderManager() {
                           </td>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm ">
                             <div>
-                              {item.status === 0 ? <p>Chưa xác nhận</p> : <p>Đã xác nhận</p>}
+                              {item.status === 0 ? (
+                                <p>Chưa xác nhận</p>
+                              ) : (
+                                <p>Đã xác nhận</p>
+                              )}
                             </div>
                           </td>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm ">

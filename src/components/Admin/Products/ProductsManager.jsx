@@ -103,7 +103,7 @@ export default function ProductsManager() {
                       return (
                         <tr key={item.id}>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
-                            {index + 1}
+                            {index + 1 + ((pageNumber - 1) * 10)}
                           </td>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
                             <div>Tên: {item.name}</div>

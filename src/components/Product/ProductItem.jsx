@@ -24,11 +24,8 @@ export default function ProductItem({ product }) {
         <div className="relative overflow-hidden shadow-lg rounded-md">
           <Link href={`product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
             <Image src={journey} alt="category-image" className="invisible" />
-            {pictures.map((item) => {
-              return (
-                <Image
-                  key={item.id}
-                  src={item.path === journey ? item.path : URL_API + "/" + item.path}
+            <Image
+                  src={product.pictures.length > 0 && product.pictures[0].path ? URL_API + "/" + product.pictures[0].path : journey}
                   sizes="(max-width: 768px) 30vw,
                     (max-width: 1024px) 25vw,
                     (max-width: 1280px) 40vw,
@@ -36,10 +33,8 @@ export default function ProductItem({ product }) {
                   alt="category-image"
                   width={1200}
                   height={1200}
-                  className="absolute top-0 duration-500 group-hover:scale-105"
+                  className="absolute top-0 duration-500 group-hover:scale-105 h-full object-contain"
                 />
-              );
-            })}
           </Link>
         </div>
         <div className="mt-5 w-full text-center">

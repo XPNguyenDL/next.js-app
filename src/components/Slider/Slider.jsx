@@ -13,9 +13,6 @@ const sliders = [
   },
   {
     url: "https://file.hstatic.net/200000294254/file/everyday_7592b4724863409f865a5ee3db54b14b.jpg"
-  },
-  {
-    url: "https://akko.com.vn/wp-content/uploads/2023/03/akko-3098B-banner-ngang-01.jpg"
   }
 ];
 

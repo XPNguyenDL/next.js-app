@@ -52,6 +52,36 @@ export async function getProductsByQueries(parameters) {
     });
 }
 
+export async function getTopSales() {
+  return fetch(`${URL_API}/api/products/TopSales`, {
+    method: "GET"
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Lỗi gòi");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data;
+    });
+}
+
+export async function getRelatedProducts(slug) {
+  return fetch(`${URL_API}/api/products/Related/${slug}`, {
+    method: "GET"
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Lỗi gòi");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return data;
+    });
+}
+
 export async function AddProduct(product) {
   return fetch(`${URL_API}/api/products`, {
     method: "POST",
