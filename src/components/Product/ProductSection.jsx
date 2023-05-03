@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import { URL_API } from "../Services/Store";
 import FormatVND from "@/src/FormatCurrent/FormatVND";
-import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import "@/src/styles/animation.scss";
 import { useSelector } from "react-redux";
 import { addProduct, updateItemQuantity } from "@/src/reducers/CartStore";
@@ -13,9 +12,15 @@ import journey from "@/public/assets/images/home/journey.jpg";
 
 export default function ProductSection({ data }) {
   const [quantity, setQuantity] = useState(1);
+  const [index, setIndex] = useState(0);
 
   const dispatch = useDispatch();
   const currentProduct = useSelector((state) => state.cart.items);
+
+  const handleImages = (e, index) => {
+    e.preventDefault();
+    setIndex(index);
+  } 
 
   const handleAddToCart = () => {
     const result = {
@@ -42,11 +47,12 @@ export default function ProductSection({ data }) {
           <div className="sticky flex">
             <div className="hidden w-[9%] lg:block">
               <div className="top-[65px] w-full pb-px">
-                {data.pictures.map((item) => {
+                {data.pictures.map((item, index) => {
                   return (
                     <div
                       key={item.id}
-                      className="mb-2.5 border border-gray-light">
+                      className="mb-2.5 border border-gray-light"
+                      onClick={(e) => handleImages(e, index)}>
                       <Image
                         src={URL_API + "/" + item.path}
                         width={1200}
@@ -60,9 +66,9 @@ export default function ProductSection({ data }) {
             </div>
             <div className="relative w-[91%]">
               <div className="sticky top-[65px] mx-auto w-[91%] pb-px">
-                <div className="mb-2.5 border border-gray-light">
+                <div className="mb-2.5 border border-gray-light rounded-xl overflow-hidden ">
                   <Image
-                    src={data.pictures.length > 0 ? `${URL_API}/${data.pictures[0].path}` : journey}
+                    src={data.pictures.length > 0 ? `${URL_API}/${data.pictures[index].path}` : journey}
                     width={1200}
                     height={1200}
                     alt={data.urlSlug}
