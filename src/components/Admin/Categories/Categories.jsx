@@ -1,5 +1,8 @@
 "use client";
-import { deleteCategory, getCategoriesByQueries } from "@/src/API/CategoriesAPI";
+import {
+  deleteCategory,
+  getCategoriesByQueries
+} from "@/src/API/CategoriesAPI";
 import React, { useEffect, useState } from "react";
 import FilterCategories from "./FilterCategories";
 import Link from "next/link";
@@ -97,7 +100,7 @@ export default function CategoriesManager() {
                       return (
                         <tr key={item.id}>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
-                            {index + 1}
+                            {index + 1 + (pageNumber - 1) * 10}
                           </td>
                           <td className="text-gray-800 whitespace-nowrap px-6 py-4 text-sm">
                             {item.name}
@@ -112,7 +115,7 @@ export default function CategoriesManager() {
                               Chỉnh sửa
                             </Link>
                           </td>
-                          <td className="whitespace-nowrap cursor-pointer px-6 py-4 text-right text-sm font-medium">
+                          <td className="cursor-pointer whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                             <div
                               className="text-danger-500 hover:text-danger-700"
                               onClick={(e) => handleDelete(e, item.id)}>
@@ -125,14 +128,14 @@ export default function CategoriesManager() {
                   ) : (
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-center text-sm font-medium">
-                          Không có danh mục nào
+                        Không có danh mục nào
                       </td>
                     </tr>
                   )}
                 </tbody>
               </table>
             </div>
-              <Pager metadata={metadata} onPageChange={handleChangePage} />
+            <Pager metadata={metadata} onPageChange={handleChangePage} />
           </div>
         </div>
       </div>
