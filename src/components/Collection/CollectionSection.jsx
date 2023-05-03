@@ -22,7 +22,7 @@ export default function CollectionSection() {
     async function fetchPosts() {
       const queries = new URLSearchParams({
         PageNumber: pageNumber || 1,
-        PageSize: 10,
+        PageSize: 12,
         SortColumn: "Id",
         ...(keyword && { keyword: keyword })
       });
