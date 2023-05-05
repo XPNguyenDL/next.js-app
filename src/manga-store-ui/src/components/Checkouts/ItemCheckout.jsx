@@ -2,7 +2,6 @@
 
 import FormatVND from "@/src/FormatCurrent/FormatVND";
 import React from "react";
-import { URL_API } from "../Services/Store";
 import { RiCloseLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
 import { removeProduct } from "@/src/reducers/CartStore";
@@ -18,7 +17,7 @@ export default function ItemCheckout({ item }) {
     <div className="flex items-center justify-between border-b border-gray-100 pb-2 px-5">
       <div className="flex items-center">
         <img
-          src={URL_API + `/` + item.imageSrc}
+          src={process.env.NEXT_PUBLIC_API_URL + `/` + item.imageSrc}
           alt={item.imageAlt}
           className="mr-6 h-32 w-32 object-cover"
         />

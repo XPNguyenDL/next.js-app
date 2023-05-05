@@ -1,7 +1,6 @@
-import { URL_API } from "../components/Services/Store";
 
 export async function CheckoutsAPI(data) {
-  return await fetch(`${URL_API}/api/orders/checkout`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/checkout`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -22,7 +21,7 @@ export async function CheckoutsAPI(data) {
 }
 
 export async function getOrdersByQueries(parameters) {
-  return await fetch(`${URL_API}/api/orders?${parameters}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders?${parameters}`, {
     method: "GET"
   })
     .then((response) => {
@@ -38,7 +37,7 @@ export async function getOrdersByQueries(parameters) {
 
 
 export async function ToggleOrder(id) {
-  return await fetch(`${URL_API}/api/orders/toggle/${id}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/toggle/${id}`, {
     method: "GET"
   })
     .then((response) => {

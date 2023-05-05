@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import Breadcrumb from "../Breadcrumb/Breadcrumb";
 import { useDispatch } from "react-redux";
 import Image from "next/image";
-import { URL_API } from "../Services/Store";
 import FormatVND from "@/src/FormatCurrent/FormatVND";
 import "@/src/styles/animation.scss";
 import { useSelector } from "react-redux";
@@ -54,7 +53,7 @@ export default function ProductSection({ data }) {
                       className="mb-2.5 border border-gray-light"
                       onClick={(e) => handleImages(e, index)}>
                       <Image
-                        src={URL_API + "/" + item.path}
+                        src={process.env.NEXT_PUBLIC_API_URL + "/" + item.path}
                         width={1200}
                         height={1200}
                         alt={item.urlSlug}
@@ -68,7 +67,7 @@ export default function ProductSection({ data }) {
               <div className="sticky top-[65px] mx-auto w-[91%] pb-px">
                 <div className="mb-2.5 border border-gray-light rounded-xl overflow-hidden ">
                   <Image
-                    src={data.pictures.length > 0 ? `${URL_API}/${data.pictures[index].path}` : journey}
+                    src={data.pictures.length > 0 ? `${process.env.NEXT_PUBLIC_API_URL}/${data.pictures[index].path}` : journey}
                     width={1200}
                     height={1200}
                     alt={data.urlSlug}

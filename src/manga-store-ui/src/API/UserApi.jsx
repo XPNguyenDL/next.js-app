@@ -1,7 +1,6 @@
-import { URL_API } from "../components/Services/Store";
 
 export async function LoginApi(data) {
-  return await fetch(`${URL_API}/api/accounts`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/accounts`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

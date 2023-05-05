@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import journey from "@/public/assets/images/home/journey.jpg";
 import FormatVND from "@/src/FormatCurrent/FormatVND";
-import { URL_API } from "../Services/Store";
 
 export default function ProductItem({ product }) {
   let pictures = product.pictures;
@@ -25,7 +24,7 @@ export default function ProductItem({ product }) {
           <Link href={`/product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
             <Image src={journey} alt="category-image" className="invisible" />
             <Image
-                  src={product.pictures.length > 0 && product.pictures[0].path ? URL_API + "/" + product.pictures[0].path : journey}
+                  src={product.pictures.length > 0 && product.pictures[0].path ? process.env.NEXT_PUBLIC_API_URL + "/" + product.pictures[0].path : journey}
                   sizes="(max-width: 768px) 30vw,
                     (max-width: 1024px) 25vw,
                     (max-width: 1280px) 40vw,

@@ -1,7 +1,7 @@
-import { URL_API } from "../components/Services/Store";
+
 
 export async function getCategoriesByQueries(parameters) {
-  return await fetch(`${URL_API}/api/categories?${parameters}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories?${parameters}`, {
     method: "GET"
   })
     .then((response) => {
@@ -16,7 +16,7 @@ export async function getCategoriesByQueries(parameters) {
 }
 
 export async function deleteCategory(id) {
-  return await fetch(`${URL_API}/api/categories/${id}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, {
     method: "DELETE"
   })
     .then((response) => {
@@ -31,7 +31,7 @@ export async function deleteCategory(id) {
 }
 
 export async function addCategory(category) {
-  return await fetch(`${URL_API}/api/categories`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -50,7 +50,7 @@ export async function addCategory(category) {
 }
 
 export async function updateCategory(categoryId, category) {
-  return await fetch(`${URL_API}/api/categories/${categoryId}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${categoryId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json"
@@ -69,7 +69,7 @@ export async function updateCategory(categoryId, category) {
 }
 
 export async function getCategoryById(id) {
-  return await fetch(`${URL_API}/api/categories/${id}`, {
+  return await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, {
     method: "GET"
   })
     .then((response) => {

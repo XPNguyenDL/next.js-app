@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { updateProductPictures } from "@/src/API/ProductAPI";
 import Image from "next/image";
-import { URL_API } from "../../Services/Store";
 
 export default function ImageProduct({ productId, pictures }) {
   const [images, setImages] = useState([]);
@@ -33,7 +32,7 @@ export default function ImageProduct({ productId, pictures }) {
               <Image
                 className="mx-auto mb-5 border border-gray-500 shadow-lg"
                 key={item.id}
-                src={`${URL_API}/${item.path}`}
+                src={`${process.env.NEXT_PUBLIC_API_URL}/${item.path}`}
                 width={250}
                 height={250}
               />

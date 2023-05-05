@@ -3,7 +3,6 @@
 import FormatVND from "@/src/FormatCurrent/FormatVND";
 import Link from "next/link";
 import React from "react";
-import { URL_API } from "../Services/Store";
 import { useDispatch } from "react-redux";
 import { removeProduct } from "@/src/reducers/CartStore";
 
@@ -17,7 +16,7 @@ export default function CartSidebarItem({ product }) {
     <div className="flex">
       <div className="border-gray-200 h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border">
         <img
-          src={URL_API + `/` + product.imageSrc}
+          src={process.env.NEXT_PUBLIC_API_URL + `/` + product.imageSrc}
           alt={product.urlSlug}
           className="h-full w-full object-cover object-center"
         />

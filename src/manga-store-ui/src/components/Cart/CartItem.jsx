@@ -5,7 +5,6 @@ import { removeProduct, updateItemQuantity } from "@/src/reducers/CartStore";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { RiCloseLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { URL_API } from "../Services/Store";
 
 export default function CartItem({ item }) {
   const dispatch = useDispatch();
@@ -21,7 +20,7 @@ export default function CartItem({ item }) {
     <div className="flex items-center justify-between border-b border-gray-100 pb-2">
       <div className="flex items-center">
         <img
-          src={URL_API + `/` + item.imageSrc}
+          src={process.env.NEXT_PUBLIC_API_URL + `/` + item.imageSrc}
           alt={item.imageAlt}
           className="mr-6 h-32 w-32 object-cover"
         />
