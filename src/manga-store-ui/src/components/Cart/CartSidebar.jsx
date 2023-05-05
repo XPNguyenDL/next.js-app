@@ -26,12 +26,12 @@ export default function CartSidebar() {
     }, 0)
     .toFixed(2);
 
-  const totalQuantity = cartItems.reduce((acc, item) => {
-    if (!item.quantity) {
-      return 0;
-    }
-    return acc + item.quantity;
-  }, 0);
+  // const totalQuantity = cartItems.reduce((acc, item) => {
+  //   if (!item.quantity) {
+  //     return 0;
+  //   }
+  //   return acc + item.quantity;
+  // }, 0);
 
   const displayTotal = isNaN(total) ? "N/A" : `${total}`;
 
@@ -44,7 +44,7 @@ export default function CartSidebar() {
         <div>
           {cartItems.length ? (
             <div className="absolute top-[-40%] left-[85%] h-5 w-5 rounded-full bg-danger-500 text-center text-xs leading-[revert] text-white">
-              {totalQuantity}
+              {cartItems.length}
             </div>
           ) : (
             <></>

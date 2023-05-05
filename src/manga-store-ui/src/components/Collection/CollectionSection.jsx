@@ -5,7 +5,7 @@ import FilterCollections from "./FilterCollection";
 import Pager from "../Pager/Pager";
 import ProductItem from "../Product/ProductItem";
 
-export default function CollectionSection() {
+export default function CollectionSection({ cateSlug }) {
   // useState
   const [keyword, setKeyword] = useState("");
   const [metadata, setMetadata] = useState(true);
@@ -21,6 +21,7 @@ export default function CollectionSection() {
     fetchPosts();
     async function fetchPosts() {
       const queries = new URLSearchParams({
+        CategorySlug: cateSlug ? cateSlug : "", 
         PageNumber: pageNumber || 1,
         PageSize: 12,
         SortColumn: "Id",

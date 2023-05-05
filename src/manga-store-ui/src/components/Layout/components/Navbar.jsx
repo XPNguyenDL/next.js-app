@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
-import CartSidebar from "../../Cart/CartSidebar";
 import { useState } from "react";
 import UseReduce from "@/src/reducers/UseReduce";
+import CartSidebar from "../../Cart/CartSidebar";
 
 export default function Navbar({ pages }) {
   /**

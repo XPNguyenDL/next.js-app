@@ -17,11 +17,11 @@ export default function Breadcrumb({ href, prePlace, currentPlace }) {
           <li>
             <div className="flex items-center">
             <p className="mr-2">/</p>
-              <a
+              <Link
                 href="#"
                 className="text-gray-700 hover:text-blue-600 dark:text-gray-400 ml-1 text-sm font-medium dark:hover:text-white md:ml-2">
-                Projects
-              </a>
+                {prePlace}
+              </Link>
             </div>
           </li>
         ) : null}

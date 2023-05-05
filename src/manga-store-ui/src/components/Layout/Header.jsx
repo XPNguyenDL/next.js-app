@@ -19,11 +19,11 @@ const pages = [
   },
   {
     name: "Manga",
-    path: "/"
+    path: "/collections/manga"
   },
   {
     name: "Light novel",
-    path: "/"
+    path: "/collections/light-novel"
   }
 ];
 

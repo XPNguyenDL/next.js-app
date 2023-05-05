@@ -22,7 +22,7 @@ export default function ProductItem({ product }) {
     <div className="group relative mb-2.5 overflow-hidden bg-white">
       <div className="px-5">
         <div className="relative overflow-hidden shadow-lg rounded-md">
-          <Link href={`product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
+          <Link href={`/product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
             <Image src={journey} alt="category-image" className="invisible" />
             <Image
                   src={product.pictures.length > 0 && product.pictures[0].path ? URL_API + "/" + product.pictures[0].path : journey}
@@ -39,7 +39,7 @@ export default function ProductItem({ product }) {
         </div>
         <div className="mt-5 w-full text-center">
           <h3 className="relative mb-1.5 min-h-[18px] text-base font-bold hover:text-purple">
-            <Link href={`product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
+            <Link href={`/product/${product.urlSlug}`} title={"Mừng cậu trở về"}>
               {product.name}
             </Link>
           </h3>

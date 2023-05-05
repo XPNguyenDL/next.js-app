@@ -6,12 +6,12 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { getCategoriesByQueries } from "@/src/API/CategoriesAPI";
 import { Listbox, Transition } from "@headlessui/react";
-import { RiArrowUpDownLine } from "react-icons/ri"
+import { RiArrowUpDownLine } from "react-icons/ri";
 import { AddProduct } from "@/src/API/ProductAPI";
 
 const initial = {
-  id: "1",
-  name: "1"
+  id: "",
+  name: "Chọn danh mục"
 };
 
 export default function CreateProduct() {
@@ -24,7 +24,7 @@ export default function CreateProduct() {
   const [discount, setDiscount] = useState(0);
   const [active, setActive] = useState(false);
   const [categories, setCategories] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState(initial);
 
   // Router
   const router = useRouter();
@@ -53,7 +53,7 @@ export default function CreateProduct() {
       quantity: quantity,
       discount: discount,
       active: active === "on" ? true : false,
-      categoryId: selectedCategory
+      categoryId: selectedCategory.id
     };
 
     const res = AddProduct(data);
@@ -69,7 +69,7 @@ export default function CreateProduct() {
 
   return (
     <div>
-      <div className='inline-block'></div>
+      <div className="inline-block"></div>
       <SectionHeader title={"Thêm sản phẩm mới"} />
       <form method="post" className="mt-5 max-w-full" onSubmit={handleSubmit}>
         <div className="mb-2.5">
@@ -129,7 +129,7 @@ export default function CreateProduct() {
             <Listbox value={categories} onChange={setSelectedCategory}>
               <div className="relative mt-1">
                 <Listbox.Button className="focus-visible:border-indigo-500 focus-visible:ring-offset-orange-300 relative w-full cursor-default rounded-lg bg-white py-2 pl-3 pr-10 text-left shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 sm:text-sm">
-                  <span className="block truncate">Chọn danh mục</span>
+                  <span className="block truncate">{selectedCategory.name}</span>
                   <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
                     <RiArrowUpDownLine
                       className="h-5 w-5 text-gray-400"
@@ -142,12 +142,13 @@ export default function CreateProduct() {
                   leaveFrom="opacity-100"
                   leaveTo="opacity-0">
                   <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+                  
                     {categories.length > 0 ? (
                       categories.map((item) => (
                         <Listbox.Option
                           key={item.id}
                           className={`text-gray-900 relative cursor-default select-none py-2 pl-10 pr-4`}
-                          value={item.id}>
+                          value={item}>
                           {item.name}
                         </Listbox.Option>
                       ))
@@ -173,7 +174,7 @@ export default function CreateProduct() {
               </div>
             </div>
             <div>
-            <div className="flex min-w-[120px]">
+              <div className="flex min-w-[120px]">
                 <label className="mb-1.5 text-lg font-bold">Số lượng</label>
                 <input
                   type="number"
@@ -185,7 +186,7 @@ export default function CreateProduct() {
               </div>
             </div>
             <div>
-            <div className="flex min-w-[120px]">
+              <div className="flex min-w-[120px]">
                 <label className="mb-1.5 text-lg font-bold">Giảm giá</label>
                 <input
                   type="number"
