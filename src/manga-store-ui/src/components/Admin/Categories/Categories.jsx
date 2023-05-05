@@ -62,7 +62,7 @@ export default function CategoriesManager() {
       <FilterCategories setKeyword={setKeyword} />
       <div className="flex flex-col">
         <div className="overflow-x-auto">
-          <div className="inline-block w-full p-1.5 align-middle">
+          <div className="inline-block w-full align-middle">
             <div className="overflow-hidden rounded-lg border">
               <table className="divide-gray-200 min-w-full divide-y">
                 <thead className="bg-gray-50">

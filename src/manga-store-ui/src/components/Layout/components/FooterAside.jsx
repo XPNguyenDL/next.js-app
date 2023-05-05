@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 
 export default function FooterAside() {
@@ -9,29 +10,29 @@ export default function FooterAside() {
             DỊCH VỤ
           </h6>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Điều khoản sử dụng
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Chính sách bảo mật
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Liên hệ
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Hệ thống nhà sách
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Tra cứu đơn hàng
-            </a>
+            </Link>
           </p>
         </div>
         <div className="">
@@ -39,29 +40,29 @@ export default function FooterAside() {
             HỖ TRỢ
           </h6>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Hướng dẫn đặt hàng
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Chính sách đổi trả - hoàn tiền
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Phương thức vận chuyển
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
               Phương thức thanh toán
-            </a>
+            </Link>
           </p>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
             Chính sách khách hàng mua sỉ
-            </a>
+            </Link>
           </p>
         </div>
         <div className="">
@@ -69,9 +70,9 @@ export default function FooterAside() {
           KẾT NỐI MẠNG XÃ HỘI
           </h6>
           <p className="mb-4">
-            <a href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
+            <Link href="#!" className="text-neutral-600 dark:text-neutral-200 hover:text-purple">
             Nơi cập nhật những xu hướng thời trang và những chương trình sale mới nhất của Junie
-            </a>
+            </Link>
           </p>
         </div>
       </div>

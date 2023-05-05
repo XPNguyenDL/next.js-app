@@ -57,7 +57,7 @@ export default function EditProduct({ product, id }) {
     const result = await res;
     if (result.isSuccess) {
       if (confirm("Câp nhật thành công")) {
-        router.push("/admin/products");
+        router.back();
       }
     } else {
       alert(result.errors[0]);

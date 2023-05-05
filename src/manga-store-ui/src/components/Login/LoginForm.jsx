@@ -21,10 +21,9 @@ export default function LoginForm() {
     const res = LoginApi(dataLogin);
     const data = await res;
     if (data.isSuccess) {
-      if (confirm("Đăng nhập thành công")) {
         localStorage.setItem("token", `bearer ${data.result.token}`);
         router.push("/admin");
-      }
+      
     } else {
       setError(data.errors[0]);
       // alert(data.errors[0]);
